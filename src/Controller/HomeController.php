@@ -14,5 +14,12 @@ class HomeController  extends Controller
     public function number()
     {
         return $this->render('pages/home.html.twig');
+               $this->respond([
+            [
+                'title' => 'The Princess Bride',
+                'count' => 0
+            ]
+        ]);
     }
 }
+
