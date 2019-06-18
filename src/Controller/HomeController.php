@@ -1,23 +1,24 @@
 <?php
 
 namespace App\Controller;
-use App\Repository\ChapterOneRepository;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HomeController  extends ApiController
+class HomeController  extends Controller
 {
 
-   /**
-    * @Route("/movies", methods="GET")
-    */
-    public function index(ChapterOneRepository $chapterOneRepository)
-    {
-        $chapterOne = $chapterOneRepository->transformAll();
+  
 
-        return $this->respond($chapterOne);
-    }
+
+         /**
+         * @Route("/")
+         */
+        public function slash()
+        {
+            return $this->render('pages/home.html.twig');
+        }
 
 
 

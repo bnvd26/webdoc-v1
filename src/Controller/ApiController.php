@@ -5,9 +5,20 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Repository\ChapterOneRepository;
 
 class ApiController
 {
+
+   /**
+    * @Route("/movies", methods="GET")
+    */
+    public function index(ChapterOneRepository $chapterOneRepository)
+    {
+        $chapterOne = $chapterOneRepository->transformAll();
+
+        return $this->respond($chapterOne);
+    }
 
     /**
      * @var integer HTTP status code - 200 (OK) by default
