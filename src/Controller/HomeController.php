@@ -15,4 +15,13 @@ class HomeController  extends Controller
         {
             return $this->render('pages/home.html.twig');
         }
+
+
+         /**
+         * @Route("/admin")
+         */
+        public function admin()
+        {
+            return $this->render('pages/home.html.twig');
+        }
 }

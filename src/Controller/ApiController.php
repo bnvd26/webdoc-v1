@@ -10,7 +10,7 @@ class ApiController
 {
 
    /**
-    * @Route("api/movies", methods="GET")
+    * @Route("api/details", methods="GET")
     */
     public function index(ChapterOneRepository $chapterOneRepository)
     {
