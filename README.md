@@ -1,7 +1,7 @@
 
 # webdoc-v1
 
-webdoc using symfony &amp; vueJs
+webdoc using symfony &amp; vueJS
 
 # With homebrew
 
