@@ -13,17 +13,17 @@ webdoc using symfony &amp; vueJs
 `brew install yarn`
 
 
-## webpack
+### webpack
 
 `composer require symfony/webpack-encore-bundle`
 
 
-## doctrine
+### doctrine
 
 `composer require symfony/orm-pack`
 
 
-## init database
+### init database
 
 `php bin/console doctrine:database:create`
 
