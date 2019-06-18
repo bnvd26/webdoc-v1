@@ -4,14 +4,17 @@ webdoc using symfony &amp; vueJs
 # With homebrew
 
 ### Install composer 
+
 `brew install composer`
 
 
 ### Install yarn 
+
 `brew install yarn`
 
 
 ### webpack
+
 `composer require symfony/webpack-encore-bundle`
 
 
