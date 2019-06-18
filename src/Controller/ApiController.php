@@ -6,12 +6,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Repository\ChapterOneRepository;
-
 class ApiController
 {
 
    /**
-    * @Route("/movies", methods="GET")
+    * @Route("api/movies", methods="GET")
     */
     public function index(ChapterOneRepository $chapterOneRepository)
     {

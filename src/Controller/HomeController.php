@@ -8,10 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HomeController  extends Controller
 {
-
-  
-
-
          /**
          * @Route("/")
          */
@@ -19,8 +15,4 @@ class HomeController  extends Controller
         {
             return $this->render('pages/home.html.twig');
         }
-
-
-
-
 }
