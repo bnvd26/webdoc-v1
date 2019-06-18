@@ -1,9 +1,31 @@
 # webdoc-v1
 webdoc using symfony &amp; vueJs
 
-# Titre de niveau 1
+# With homebrew
 
-## Titre de niveau 2
+### Install composer 
+`brew install composer`
 
-### Titre de niveau 3
-` <p> SALUT </p>`
+
+### Install yarn 
+`brew install yarn`
+
+
+### webpack
+`composer require symfony/webpack-encore-bundle`
+
+
+### doctrine
+
+`composer require symfony/orm-pack`
+
+
+### init database
+
+`php bin/console doctrine:database:create`
+
+
+
+
+
+
