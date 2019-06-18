@@ -2,6 +2,7 @@
 # webdoc-v1
 
 webdoc using symfony &amp; vueJs
+zrbgozmhGRHUOB
 
 # With homebrew
 
@@ -23,13 +24,9 @@ webdoc using symfony &amp; vueJs
   
   
 
-<<<<<<< HEAD
-### webpack
-=======
 ### webpack
 
   
->>>>>>> b7c8067dbd5786ec6f48479eee6dcbcd0783b121
 
 `composer require symfony/webpack-encore-bundle`
 
@@ -38,11 +35,7 @@ webdoc using symfony &amp; vueJs
 
 ### doctrine
 
-<<<<<<< HEAD
-### doctrine
-=======
   
->>>>>>> b7c8067dbd5786ec6f48479eee6dcbcd0783b121
 
 `composer require symfony/orm-pack`
 
@@ -50,11 +43,8 @@ webdoc using symfony &amp; vueJs
   
 
 ### init database
-<<<<<<< HEAD
-=======
 
   
->>>>>>> b7c8067dbd5786ec6f48479eee6dcbcd0783b121
 
 `php bin/console doctrine:database:create`
 
