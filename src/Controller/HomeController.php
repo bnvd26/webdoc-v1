@@ -8,18 +8,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HomeController  extends Controller
 {
-    /**
-     * @Route("/")
-     */
-    public function number()
-    {
-        return $this->render('pages/home.html.twig');
-               $this->respond([
-            [
-                'title' => 'The Princess Bride',
-                'count' => 0
-            ]
-        ]);
-    }
-}
+         /**
+         * @Route("/")
+         */
+        public function slash()
+        {
+            return $this->render('pages/home.html.twig');
+        }
 
+
+         /**
+         * @Route("/admin")
+         */
+        public function admin()
+        {
+            return $this->render('pages/admin.html.twig');
+        }
+}

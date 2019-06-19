@@ -9,9 +9,9 @@ webdoc using symfony &amp; vueJS
 
 `brew install composer`
 
-### Install yarn
+### To install the bundle 
 
-`brew install yarn`
+`yarn install`
 
 ### webpack
 
@@ -25,7 +25,7 @@ webdoc using symfony &amp; vueJS
 
 `php bin/console doctrine:database:create`
 
-##loic
+
 
 
 

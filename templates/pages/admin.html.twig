@@ -6,7 +6,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+          <p>lourd</p>
+        {% endblock %}
+        {% block javascripts %}
+         {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+     
     </body>
+   
 </html>
