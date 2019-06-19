@@ -22,6 +22,6 @@ class HomeController  extends Controller
          */
         public function admin()
         {
-            return $this->render('pages/home.html.twig');
+            return $this->render('pages/admin.html.twig');
         }
 }

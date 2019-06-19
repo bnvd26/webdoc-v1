@@ -1,28 +1,84 @@
 <?php
 namespace App\Controller;
 
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Repository\ChapterOneRepository;
+use App\Repository\ChapterTwoRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
+
 class ApiController
 {
 
    /**
-    * @Route("api/details", methods="GET")
+    * @Route("api/details/chapterOne", methods="GET")
     */
-    public function index(ChapterOneRepository $chapterOneRepository)
+    public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
         $chapterOne = $chapterOneRepository->transformAll();
+        
 
         return $this->respond($chapterOne);
     }
+
+
+    /**
+    * @Route("api/details/chapterTwo", methods="GET")
+    */
+    public function chapterTwo(ChapterTwoRepository $chapterTwoRepository)
+    {
+       
+        $chapterTwo = $chapterTwoRepository->transformAll();
+
+        return $this->respond($chapterTwo);
+    }
+
+
+
+    /**
+    * @Route("api/details", methods="POST")
+    */
+    public function create(Request $request, ChapterOneRepository $chapterOneRepository, EntityManagerInterface $em)
+    {
+        $request = $this->transformJsonBody($request);
+
+        if (! $request) {
+            return $this->respondValidationError('Please provide a valid request!');
+        }
+
+        // validate the title
+        if (! $request->get('title')) {
+            return $this->respondValidationError('Please provide a title!');
+        }
+
+        // persist the new movie
+        $chapterOne = new Movie;
+        
+        $chapterOne->setTitle($request->get('title'));
+        $chapterOne->setContent($request->get('content'));
+        $chapterOne->setImageBackground($request->get('imageBackground'));
+        $chapterOne->setMusic($request->get('music'));
+        $em->persist($chapterOne);
+        $em->flush();
+
+        return $this->respondCreated($chapterOneRepository->transform($chapterOne));
+    }
+
+   
+        
+ 
 
     /**
      * @var integer HTTP status code - 200 (OK) by default
      */
     protected $statusCode = 200;
+
+
 
     /**
      * Gets the value of statusCode.
