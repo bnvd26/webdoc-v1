@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-    
+
+    {% extends 'base.html.twig' %}
         {% block body %}
       {% if app.user %}
    <h2>CHAPTER ONE</h2>
@@ -38,6 +31,3 @@
         
         {% endblock %}
   
-    </body>
-   
-</html>

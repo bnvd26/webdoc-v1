@@ -7,11 +7,7 @@
                     {{chapterOne.title}}
                 </p>
                
-               <p>
-                    {{chap.content}}
-                    {{chap.id}}
-                    {{chap.title}}
-                </p>
+         
                 
                 
             </template>
