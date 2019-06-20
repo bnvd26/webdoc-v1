@@ -22,7 +22,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
    private $repository;
    private $repositoryScnd;
-   private $maanger;
+   private $manager;
 
    public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager)
    {
@@ -34,7 +34,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
   /**
-   * @Route("/admin")
+   * @Route("/admin", name="admin.connexion")
    */
   public function administration()
   {

@@ -6,8 +6,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+    
         {% block body %}
-      
+      {% if app.user %}
    <h2>CHAPTER ONE</h2>
           {% for details in chapterOne %}
 
@@ -25,7 +26,12 @@
 
           <p>{{details.id}}</p>
           {% endfor %}
-
+        
+        {% else %}
+        <h3>ERREUR</h3>
+        <p>Il faut d'abord vous connectez pour acceder a cette partie de l'application</p>
+        <a href={{ path('admin.connexion') }}>Se connecter</a>
+        {% endif %}
         {% endblock %}
         {% block javascripts %}
          {{ encore_entry_script_tags('app') }}

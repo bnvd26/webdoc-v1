@@ -33,9 +33,9 @@ export default {
         }
     },
     async created () {
-        const response = await axios.get('http://127.0.0.1:8001/api/details/chapterOne')
+        const response = await axios.get('http://127.0.0.1:8001/api/chapterOne')
         this.chapterOne = response.data
-        const responses = await axios.get('http://127.0.0.1:8001/api/details/chapterTwo')
+        const responses = await axios.get('http://127.0.0.1:8001/api/chapterTwo')
         this.chapterTwo = responses.data
         
     }

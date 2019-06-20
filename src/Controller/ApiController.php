@@ -16,7 +16,7 @@ class ApiController
 {
 
    /**
-    * @Route("api/details/chapterOne", methods="GET")
+    * @Route("api/chapterOne", methods="GET")
     */
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
@@ -29,7 +29,7 @@ class ApiController
 
 
     /**
-    * @Route("api/details/chapterTwo", methods="GET")
+    * @Route("api/chapterTwo", methods="GET")
     */
     public function chapterTwo(ChapterTwoRepository $chapterTwoRepository)
     {
