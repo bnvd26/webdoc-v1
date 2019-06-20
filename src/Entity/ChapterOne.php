@@ -38,6 +38,8 @@ class ChapterOne
      */
     private $content;
 
+  
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +92,8 @@ class ChapterOne
 
         return $this;
     }
+
+
 
    
 }
