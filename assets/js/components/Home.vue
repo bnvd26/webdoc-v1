@@ -1,14 +1,21 @@
 <template>
    <div id="app">
-            <template v-for="details in chapterOne">
-                <div v-bind:key="details.id">
-                    <p>{{ details.id }}</p>
-                    <p>{{ details.title }}</p>
-                    <p>{{ details.content }}</p>
-                    <img :src="details.imageBackground">
-                </div>
+            <template>
+                <p>
+                    {{chapterOne.content}}
+                    {{chapterOne.id}}
+                    {{chapterOne.title}}
+                </p>
+               
+               <p>
+                    {{chap.content}}
+                    {{chap.id}}
+                    {{chap.title}}
+                </p>
+                
                 
             </template>
+          
              <template v-for="detail in chapterTwo">
                 <div v-bind:key="detail.id">
                     <p>{{ detail.id }}</p>
@@ -28,13 +35,17 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            chapterOne: {},
+            chapterOne: ' ',
+            chap: ' ',
             chapterTwo: {}
         }
     },
     async created () {
-        const response = await axios.get('http://127.0.0.1:8001/api/chapterOne')
-        this.chapterOne = response.data
+        axios
+        .get('http://127.0.0.1:8001/api/chapterOne')
+        .then(response => (this.chapterOne = response.data[0], 
+                           this.chap = response.data[1]
+                           ))
         const responses = await axios.get('http://127.0.0.1:8001/api/chapterTwo')
         this.chapterTwo = responses.data
         
