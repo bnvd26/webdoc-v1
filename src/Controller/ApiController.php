@@ -21,7 +21,8 @@ class ApiController
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
         $chapterOne = $chapterOneRepository->transformAll();
-        return $this->respond($chapterOne);
+        $chapterTwo = $chapterTwoRepository->transformAll();
+        return $this->respond([$chapterOne, $chapterTwo]);
     }
 
 

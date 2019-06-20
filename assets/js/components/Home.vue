@@ -43,8 +43,8 @@ export default {
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapterOne')
-        .then(response => (this.chapterOne = response.data[0], 
-                           this.chap = response.data[1]
+        .then(response => (this.chapterOne = response.data[0][0], 
+                           this.chap = response.data[0][1]
                            ))
         const responses = await axios.get('http://127.0.0.1:8001/api/chapterTwo')
         this.chapterTwo = responses.data
