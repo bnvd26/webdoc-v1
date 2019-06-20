@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
    <div>
+=======
+   <div id="app">
+>>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
             <template v-for="details in chapterOne">
                 <div v-bind:key="details.id">
                     <p>{{ details.id }}</p>

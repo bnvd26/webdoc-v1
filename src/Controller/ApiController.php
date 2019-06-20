@@ -21,12 +21,21 @@ class ApiController
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
         $chapterOne = $chapterOneRepository->transformAll();
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
         return $this->respond($chapterOne);
     }
 
 
+<<<<<<< HEAD
+=======
+    
+
+
+>>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     /**
     * @Route("api/details/chapterTwo", methods="GET")
     */
@@ -38,6 +47,7 @@ class ApiController
         return $this->respond($chapterTwo);
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -73,6 +83,8 @@ class ApiController
         
  
 
+=======
+>>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     /**
      * @var integer HTTP status code - 200 (OK) by default
      */

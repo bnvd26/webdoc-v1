@@ -7,12 +7,40 @@
     </head>
     <body>
         {% block body %}
+<<<<<<< HEAD
           <p>lourd</p>
         {% endblock %}
         {% block javascripts %}
          {{ encore_entry_script_tags('app') }}
         {% endblock %}
      
+=======
+      
+   <h2>CHAPTER ONE</h2>
+          {% for details in chapterOne %}
+
+          <p>{{details.id}}</p>
+          <a href={{ path('admin.edit', {id: details.id}) }}>Editer</a>
+          <form method="post" action="{{ path('admin.delete', {id: details.id}) }}">
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Supprimer</button>
+          </form>
+          
+          {% endfor %}
+          <a href={{ path('admin.create')}}>Creer un details</a>
+    <h2>CHAPTER TWO</h2>
+             {% for details in chapterTwo %}
+
+          <p>{{details.id}}</p>
+          {% endfor %}
+
+        {% endblock %}
+        {% block javascripts %}
+         {{ encore_entry_script_tags('app') }}
+        
+        {% endblock %}
+  
+>>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     </body>
    
 </html>
