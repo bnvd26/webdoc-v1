@@ -21,10 +21,11 @@ class ApiController
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
         $chapterOne = $chapterOneRepository->transformAll();
-        
-
         return $this->respond($chapterOne);
     }
+
+
+    
 
 
     /**
@@ -37,41 +38,6 @@ class ApiController
 
         return $this->respond($chapterTwo);
     }
-
-
-
-    /**
-    * @Route("api/details", methods="POST")
-    */
-    public function create(Request $request, ChapterOneRepository $chapterOneRepository, EntityManagerInterface $em)
-    {
-        $request = $this->transformJsonBody($request);
-
-        if (! $request) {
-            return $this->respondValidationError('Please provide a valid request!');
-        }
-
-        // validate the title
-        if (! $request->get('title')) {
-            return $this->respondValidationError('Please provide a title!');
-        }
-
-        // persist the new movie
-        $chapterOne = new Movie;
-        
-        $chapterOne->setTitle($request->get('title'));
-        $chapterOne->setContent($request->get('content'));
-        $chapterOne->setImageBackground($request->get('imageBackground'));
-        $chapterOne->setMusic($request->get('music'));
-        $em->persist($chapterOne);
-        $em->flush();
-
-        return $this->respondCreated($chapterOneRepository->transform($chapterOne));
-    }
-
-   
-        
- 
 
     /**
      * @var integer HTTP status code - 200 (OK) by default
