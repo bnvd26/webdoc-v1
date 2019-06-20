@@ -253,12 +253,9 @@
     "symfony/inflector": {
         "version": "v4.3.1"
     },
-<<<<<<< HEAD
-=======
     "symfony/intl": {
         "version": "v4.3.1"
     },
->>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     "symfony/maker-bundle": {
         "version": "1.0",
         "recipe": {
@@ -295,12 +292,9 @@
     "symfony/process": {
         "version": "v4.3.1"
     },
-<<<<<<< HEAD
-=======
     "symfony/profiler-pack": {
         "version": "v1.0.4"
     },
->>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     "symfony/property-access": {
         "version": "v4.3.1"
     },
@@ -388,20 +382,15 @@
             "config/packages/validator.yaml"
         ]
     },
-<<<<<<< HEAD
-=======
     "symfony/var-dumper": {
         "version": "v4.3.1"
     },
->>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
-    "symfony/var-exporter": {
+    "sy mfony/var-exporter": {
         "version": "v4.3.1"
     },
     "symfony/web-link": {
         "version": "v4.3.1"
     },
-<<<<<<< HEAD
-=======
     "symfony/web-profiler-bundle": {
         "version": "3.3",
         "recipe": {
@@ -416,7 +405,6 @@
             "config/routes/dev/web_profiler.yaml"
         ]
     },
->>>>>>> 6dccb34064c74b46b12bb507f1a5255f9a944c75
     "symfony/web-server-bundle": {
         "version": "3.3",
         "recipe": {
