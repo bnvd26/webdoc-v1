@@ -32,6 +32,13 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+    * @ORM\Column(type="string", unique=true)
+    */
+   private $apiToken;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +92,6 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        return ['ROLE_ADMIN'];
     }
 }

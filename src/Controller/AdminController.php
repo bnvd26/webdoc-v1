@@ -38,7 +38,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
   /**
-   * @Route("api/admin", name="admin.connexion", methods="POST")
+   * @Route("api/connexion", name="admin.connexion")
    */
   public function administration()
   {

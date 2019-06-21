@@ -11,7 +11,7 @@ class HomeController  extends Controller
          /**
          * @Route("/")
          */
-        public function slash()
+        public function app()
         {
             return $this->render('pages/home.html.twig');
         }
