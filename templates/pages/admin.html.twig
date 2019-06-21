@@ -2,29 +2,37 @@
     {% extends 'base.html.twig' %}
         {% block body %}
       {% if app.user %}
-   <h2>CHAPTER ONE</h2>
+   <h2 style="text-align:center;">CHAPTER ONE</h2>
+   <div style="margin-bottom: 80px;">
           {% for details in chapterOne %}
-
-          <p>{{details.id}}</p>
+        <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
+          <p style="margin:0;">{{details.id}}</p>
           <a href={{ path('admin.edit.one', {id: details.id}) }}>Editer</a>
           <form method="post" action="{{ path('admin.delete.one', {id: details.id}) }}">
           <input type="hidden" name="_method" value="DELETE">
           <button>Supprimer</button>
           </form>
-          
+          </div>
           {% endfor %}
-          <a href={{ path('admin.create.one')}}>Creer un details</a>
-    <h2>CHAPTER TWO</h2>
+    
+          <a href={{ path('admin.create.one')}} class="btn btn-success" style="margin-left: 500px;">Creer un nouvel element</a>
+                  </div>
+    <h2 style="text-align:center;">CHAPTER TWO</h2>
+   
              {% for detail in chapterTwo %}
-             <p>{{detail.id}}</p>
-             <a href={{ path('admin.edit.two', {id: detail.id}) }}>Editer</a>
+   <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
+             <p style="margin:0;">{{detail.id}}</p>
+             <a href={{ path('admin.edit.two', {id: detail.id}) }} style="text-align:center;">Editer</a>
           <form method="post" action="{{ path('admin.delete.two', {id: detail.id}) }}">
           <input type="hidden" name="_method" value="DELETE">
           <button>Supprimer</button>
+       
 
-      
+           </div>
           {% endfor %}
-          <a href={{ path('admin.create.two')}}>Creer un details</a>
+             <a href={{ path('admin.create.two')}} class="btn btn-success" style="margin-left: 500px;">Creer un nouvel element</a>
+        
+       
         
         {% else %}
         <h3>ERREUR</h3>
