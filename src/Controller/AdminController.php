@@ -67,7 +67,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
     /**
-    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one", methods="POST")
+    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one", methods="POST|GET")
     */
 
     public function create(Request $request)
@@ -89,7 +89,7 @@ use Doctrine\Common\Persistence\ObjectManager;
     }
 
     /**
-    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two", methods="POST")
+    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two", methods="POST|GET")
     */
 
     public function createTwo(Request $request)
