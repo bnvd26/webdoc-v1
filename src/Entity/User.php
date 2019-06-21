@@ -35,7 +35,7 @@ class User implements UserInterface
     /**
     * @ORM\Column(type="string", unique=true)
     */
-   private $apiToken;
+    private $apiToken;
 
 
 

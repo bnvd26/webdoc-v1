@@ -12,6 +12,9 @@ use App\Entity\ChapterTwo;
 use App\Form\ChapterOneType;
 use App\Form\ChapterTwoType;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use App\Entity\User;
 
 
 
@@ -60,9 +63,12 @@ use Doctrine\Common\Persistence\ObjectManager;
     */
    public function admin()
    {
+ 
       $chapterOne = $this->repository->findAll();
       $chapterTwo = $this->repositoryScnd->findAll();
       return $this->render('pages/admin.html.twig', compact('chapterOne', 'chapterTwo'));
+ 
+
    }
 
 
