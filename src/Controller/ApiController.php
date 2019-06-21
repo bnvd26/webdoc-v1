@@ -16,7 +16,7 @@ class ApiController
 {
 
    /**
-    * @Route("api/chapterOne", methods="GET")
+    * @Route("api/chapterOne", methods="GET", name="chapters.json")
     */
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {

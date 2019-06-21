@@ -7,10 +7,11 @@
           {% for details in chapterOne %}
         <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
           <p style="margin:0;">{{details.id}}</p>
-          <a href={{ path('admin.edit.one', {id: details.id}) }}>Editer</a>
+          <p style="margin:0;">{{details.title}}</p>
+          <a href={{ path('admin.edit.one', {id: details.id}) }} class="btn btn-primary">Editer</a>
           <form method="post" action="{{ path('admin.delete.one', {id: details.id}) }}">
           <input type="hidden" name="_method" value="DELETE">
-          <button>Supprimer</button>
+          <button class="btn btn-danger">Supprimer</button>
           </form>
           </div>
           {% endfor %}
@@ -22,10 +23,11 @@
              {% for detail in chapterTwo %}
    <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
              <p style="margin:0;">{{detail.id}}</p>
-             <a href={{ path('admin.edit.two', {id: detail.id}) }} style="text-align:center;">Editer</a>
+             <p style="margin:0;">{{detail.title}}</p>
+             <a href={{ path('admin.edit.two', {id: detail.id}) }} style="text-align:center;" class="btn btn-primary">Editer</a>
           <form method="post" action="{{ path('admin.delete.two', {id: detail.id}) }}">
           <input type="hidden" name="_method" value="DELETE">
-          <button>Supprimer</button>
+          <button class="btn btn-danger">Supprimer</button>
        
 
            </div>
