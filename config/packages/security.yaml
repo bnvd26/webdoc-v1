@@ -14,6 +14,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            pattern:   ^/
             anonymous: true
             provider: in_database
 
@@ -21,6 +22,9 @@ security:
                 login_path: admin.connexion
                 check_path: admin.connexion
                 default_target_path: admin
+            logout:
+                path:       admin.logout
+                target:     admin.connexion
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

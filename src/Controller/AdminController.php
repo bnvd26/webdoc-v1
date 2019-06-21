@@ -46,6 +46,15 @@ use Doctrine\Common\Persistence\ObjectManager;
   }
 
 
+  /**
+   * @Route("api/admin/logout", name="admin.logout")
+   */
+  public function logOut()
+  {
+  
+  }
+
+
    /**
     *@Route("api/admin/chapters", name="admin")
     */
