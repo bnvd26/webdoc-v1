@@ -37,6 +37,11 @@ class User implements UserInterface
     */
     private $apiToken;
 
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
 
 
     public function getId(): ?int
@@ -68,6 +73,12 @@ class User implements UserInterface
         return $this;
     }
 
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+        return $this;
+    }
+
     public function getEmail(): ?string
     {
         return $this->email;
@@ -90,8 +101,11 @@ class User implements UserInterface
 
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
-        return ['ROLE_ADMIN'];
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_ADMIN';
+        return array_unique($roles);
     }
 }
