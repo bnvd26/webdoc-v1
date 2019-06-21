@@ -8,8 +8,12 @@ use App\Repository\ChapterOneRepository;
 use App\Repository\ChapterTwoRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\ChapterOne;
+use App\Entity\ChapterTwo;
 use App\Form\ChapterOneType;
+use App\Form\ChapterTwoType;
 use Doctrine\Common\Persistence\ObjectManager;
+
+
 
  class AdminController extends AbstractController
  {
@@ -22,7 +26,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
    private $repository;
    private $repositoryScnd;
-   private $maanger;
+   private $manager;
 
    public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager)
    {
@@ -34,7 +38,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
   /**
-   * @Route("/admin")
+   * @Route("api/admin", name="admin.connexion")
    */
   public function administration()
   {
@@ -42,10 +46,19 @@ use Doctrine\Common\Persistence\ObjectManager;
   }
 
 
+  /**
+   * @Route("api/admin/logout", name="admin.logout")
+   */
+  public function logOut()
+  {
+  
+  }
+
+
    /**
-    *@Route("/admin/ok", name="admin")
+    *@Route("api/admin/chapters", name="admin")
     */
-   public function adminnn()
+   public function admin()
    {
       $chapterOne = $this->repository->findAll();
       $chapterTwo = $this->repositoryScnd->findAll();
@@ -54,7 +67,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
     /**
-    *@Route("/admin/ok/create", name="admin.create")
+    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one")
     */
 
     public function create(Request $request)
@@ -75,9 +88,31 @@ use Doctrine\Common\Persistence\ObjectManager;
         ]); 
     }
 
+    /**
+    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two")
+    */
+
+    public function createTwo(Request $request)
+    {
+        $chapterTwo = new ChapterTwo();
+        $form = $this->createForm(ChapterTwoType::class, $chapterTwo);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+          $this->manager->persist($chapterTwo);
+          $this->manager->flush();
+          return $this->redirectToRoute('admin');
+        }
+        return $this->render('pages/create.html.twig',[
+          'chapterTwo'=>$chapterTwo,
+          'form'      => $form->createView()
+        ]); 
+    }    
+
 
    /**
-    * @Route("/admin/ok/{id}", name="admin.edit", methods="GET|POST")
+    * @Route("api/admin/chapters/chapterOne/edit{id}", name="admin.edit.one", methods="GET|POST")
     */
 
     public function edit(ChapterOne $chapterOne, Request $request)
@@ -96,7 +131,26 @@ use Doctrine\Common\Persistence\ObjectManager;
     }
 
     /**
-     * @Route("/admin/ok/{id}", name="admin.delete", methods="DELETE")
+    * @Route("api/admin/chapters/chapterTwo/edit{id}", name="admin.edit.two", methods="GET|POST")
+    */
+
+    public function editTwo(ChapterTwo $chapterTwo, Request $request)
+    {
+        $form = $this->createForm(ChapterTwoType::class, $chapterTwo);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+          $this->manager->flush();
+          return $this->redirectToRoute('admin');
+        }
+        return $this->render('pages/edit.html.twig',[
+          'chapterTwo'=>$chapterTwo,
+          'form'      => $form->createView()
+        ]); 
+    }
+
+    /**
+     * @Route("api/admin/chapters/chapterOne/{id}", name="admin.delete.one", methods="DELETE")
      */
 
      public function delete(ChapterOne $chapterOne)
@@ -107,6 +161,20 @@ use Doctrine\Common\Persistence\ObjectManager;
        return $this->redirectToRoute('admin'); 
        
      }
+
+
+    /**
+     * @Route("api/admin/chapters/chapterTwo/{id}", name="admin.delete.two", methods="DELETE")
+     */
+
+    public function deleteTwo(ChapterTwo $chapterTwo)
+    {
+      $this->manager->remove($chapterTwo);
+      $this->manager->flush();
+      
+      return $this->redirectToRoute('admin'); 
+      
+    }     
 
 
 
