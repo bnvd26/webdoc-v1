@@ -38,7 +38,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
   /**
-   * @Route("api/admin", name="admin.connexion")
+   * @Route("api/admin", name="admin.connexion", methods="POST")
    */
   public function administration()
   {
@@ -56,7 +56,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
    /**
-    *@Route("api/admin/chapters", name="admin")
+    *@Route("api/admin/chapters", name="admin", methods="GET|POST")
     */
    public function admin()
    {
@@ -67,7 +67,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
     /**
-    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one")
+    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one", methods="POST")
     */
 
     public function create(Request $request)
@@ -89,7 +89,7 @@ use Doctrine\Common\Persistence\ObjectManager;
     }
 
     /**
-    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two")
+    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two", methods="POST")
     */
 
     public function createTwo(Request $request)
