@@ -33,12 +33,10 @@ export default {
     },
     async created () {
         axios
-        .get('http://127.0.0.1:8001/api/chapterOne')
+        .get('http://127.0.0.1:8001/api/chapters')
         .then(response => (this.chapterOne = response.data[0][0], 
                            this.chap = response.data[1][0]
                            ))
-        const responses = await axios.get('http://127.0.0.1:8001/api/chapterTwo')
-        this.chapterTwo = responses.data
         
     }
 }

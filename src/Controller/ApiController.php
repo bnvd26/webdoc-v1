@@ -16,7 +16,7 @@ class ApiController
 {
 
    /**
-    * @Route("api/chapterOne", methods="GET", name="chapters.json")
+    * @Route("api/chapters", methods="GET", name="chapters.json")
     */
     public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository)
     {
@@ -25,20 +25,6 @@ class ApiController
         return $this->respond([$chapterOne, $chapterTwo]);
     }
 
-
-    
-
-
-    /**
-    * @Route("api/chapterTwo", methods="GET")
-    */
-    public function chapterTwo(ChapterTwoRepository $chapterTwoRepository)
-    {
-       
-        $chapterTwo = $chapterTwoRepository->transformAll();
-
-        return $this->respond($chapterTwo);
-    }
 
     /**
      * @var integer HTTP status code - 200 (OK) by default
