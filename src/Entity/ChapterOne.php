@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,6 +39,16 @@ class ChapterOne
      * @ORM\Column(type="text")
      */
     private $content;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Picture", mappedBy="chapterOne", orphanRemoval=true)
+     */
+    private $pictures;
+
+    public function __construct()
+    {
+        $this->pictures = new ArrayCollection();
+    }
 
   
 
@@ -89,6 +101,37 @@ class ChapterOne
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setChapterOne($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->contains($picture)) {
+            $this->pictures->removeElement($picture);
+            // set the owning side to null (unless already changed)
+            if ($picture->getChapterOne() === $this) {
+                $picture->setChapterOne(null);
+            }
+        }
 
         return $this;
     }
