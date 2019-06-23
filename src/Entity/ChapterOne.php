@@ -33,7 +33,7 @@ class ChapterOne
     private $filename;
 
     /**
-     * @var File
+     * @var File|null
      * @Vich\UploadableField(mapping="chapterOne_image", fileNameProperty="filename")
      */
 
@@ -67,7 +67,11 @@ class ChapterOne
     /**
      * @ORM\Column(type="datetime")
      */
-    private $updatedAt;
+    private $updated;
+
+
+
+ 
 
     public function __construct()
     {
@@ -196,23 +200,26 @@ class ChapterOne
     {
         $this->imageFile = $imageFile;
         if ($this->imageFile instanceof UploadedFile) {
-            $this->updatedAt = new \DateTime('now');
+            $this->updated = new \DateTime('now');
         }
         return $this;
     
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdated(): ?\DateTimeInterface
     {
-        return $this->updatedAt;
+        return $this->updated;
     }
 
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    public function setUpdated(\DateTimeInterface $updated): self
     {
-        $this->updatedAt = $updatedAt;
+        $this->updated = $updated;
 
         return $this;
     }
+
+
+
 
 
 

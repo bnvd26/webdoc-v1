@@ -15,6 +15,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\Response;
 
 
 
@@ -36,6 +37,7 @@ use App\Entity\User;
      $this->manager = $manager;
      $this->repository = $repository;
      $this->repositoryScnd = $repositoryScnd;
+
 
    }
 
@@ -76,24 +78,29 @@ use App\Entity\User;
     *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one", methods="POST|GET")
     */
 
-    public function create(Request $request)
+    public function create(Request $request) 
     {
         $chapterOne = new ChapterOne();
+        $chapterOne->setUpdated(new \DateTime());
         $form = $this->createForm(ChapterOneType::class, $chapterOne);
+        
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
         {
-          
+                
           $this->manager->persist($chapterOne);
+          
           $this->manager->flush();
           return $this->redirectToRoute('admin');
         }
+  
         return $this->render('pages/create.html.twig',[
           'chapterOne'=>$chapterOne,
           'form'      => $form->createView()
         ]); 
-    }
+    
+  }
 
     /**
     *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two", methods="POST|GET")
