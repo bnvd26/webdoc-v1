@@ -5,11 +5,16 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass="App\Repository\ChapterOneRepository")
+ * @Vich\Uploadable
  */
 class ChapterOne
 {
@@ -19,6 +24,20 @@ class ChapterOne
      * @ORM\Column(type="integer")
      */
     private $id;
+
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+    private $filename;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="chapterOne_image", fileNameProperty="filename")
+     */
+
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -44,6 +63,11 @@ class ChapterOne
      * @ORM\OneToMany(targetEntity="App\Entity\Picture", mappedBy="chapterOne", orphanRemoval=true)
      */
     private $pictures;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -132,6 +156,60 @@ class ChapterOne
                 $picture->setChapterOne(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param null|string 
+     * @return chapterOne
+     */
+    public function setFilename(?string $filename): chapterOne
+    {
+        $this->filename = $filename;
+        return $this;
+    }
+
+    /**
+     * @return null|File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+
+        
+    }
+
+    /**
+     * @param null|File 
+     * @return chapterOne
+     */
+    public function setImageFile(?File $imageFile): chapterOne
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
@@ -16,6 +17,9 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
+
+  
+    
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -113,4 +117,6 @@ class User implements UserInterface
     {
         $this->apiToken = $apiToken;
     }
+
+    
 }

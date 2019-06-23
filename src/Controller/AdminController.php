@@ -84,6 +84,7 @@ use App\Entity\User;
 
         if($form->isSubmitted() && $form->isValid())
         {
+          
           $this->manager->persist($chapterOne);
           $this->manager->flush();
           return $this->redirectToRoute('admin');
