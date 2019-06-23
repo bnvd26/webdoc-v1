@@ -108,4 +108,9 @@ class User implements UserInterface
         $roles[] = 'ROLE_ADMIN';
         return array_unique($roles);
     }
+
+    public function setApiToken($apiToken)
+    {
+        $this->apiToken = $apiToken;
+    }
 }

@@ -1,3 +1,19 @@
 body {
-    background-color: lightgray;
+    background-color: rgb(173, 99, 99);
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gotham Book'), url('GothamBook.woff') format('woff');
+    }
+.test {
+    font-family: 'Gotham Book';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.ok {
+    color: blue;
 }

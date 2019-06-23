@@ -1,7 +1,9 @@
-<template>
+
+        <template>
    <div id="app">
-            <template>
-                <p>
+      
+
+                <p class="ok">
                     {{chapterOne.content}}
                     {{chapterOne.id}}
                     {{chapterOne.title}}
@@ -14,12 +16,12 @@
                 </p>
                 
                 
-            </template>
+   
   
 
      </div>
-</template>
 
+         </template>
 <script>
 import axios from 'axios'
 
@@ -41,6 +43,19 @@ export default {
     }
 }
 </script>
+
+        
+
+      <style>
+.ok {
+    color:blue;
+}
+
+
+</style>
+
+
+
 
 
 
