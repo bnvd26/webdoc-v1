@@ -6,10 +6,13 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 import Home from './components/Home.vue';
+import App from './components/App.vue';
+import Questions from './components/Questions.vue';
 
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/questions', component: Questions },
 
 ]
 
@@ -18,7 +21,8 @@ const router = new VueRouter({
   routes
 })
 
+
 new Vue({
   router,
-  render: h => h(Home)
+  render: h => h(App)
 }).$mount('#app')

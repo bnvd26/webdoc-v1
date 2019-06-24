@@ -5,39 +5,39 @@
 
         <p class="title">{{chapterOne.title}}</p>
 
-        <p class="content">{{chapterOne.music}}</p>
+        <p class="content">{{chapterOne.content}}</p>
 
-        <p class="music">{{chapterOne.content}}</p>
+        <p class="music">{{chapterOne.music}}</p>
 
-        <img class="scroll" src="../../images/scroll.svg" alt="Scroll Down">
+        <img class="scroll" src="../../img/scroll.svg" alt="Scroll Down">
 
     </div>
 </template>
-<script>
-import axios from 'axios'
 
-export default {
-    data() {
-        return {
-            chapterOne: ' ',
-            chap: ' ',
-            chapterTwo: {}
+<script>
+    import axios from 'axios'
+
+    export default {
+        data() {
+            return {
+                chapterOne: ' ',
+                chap: ' ',
+                chapterTwo: {}
+            }
+        },
+        async created() {
+            axios
+                .get('http://127.0.0.1:8001/api/chapters')
+                .then(response => (this.chapterOne = response.data[0][0],
+                    this.chap = response.data[1][0]
+                ))
+
         }
-    },
-    async created () {
-        axios
-        .get('http://127.0.0.1:8001/api/chapters')
-        .then(response => (this.chapterOne = response.data[1][0], 
-                           this.chap = response.data[1][0]
-                           ))
-        
     }
-}
 </script>
 
-        
 <style>
-  @font-face {
+    @font-face {
         font-family: 'Gotham';
         src: url('../../fonts/Gotham-Bold.woff2') format('woff2'),
             url('../../fonts/Gotham-Bold.woff') format('woff');
@@ -154,13 +154,4 @@ export default {
         }
     }
 
-
-
-
 </style>
-
-
-
-
-
-
