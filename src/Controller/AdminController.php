@@ -6,6 +6,7 @@ use App\Controller\ApiController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ChapterOneRepository;
 use App\Repository\ChapterTwoRepository;
+use App\Repository\QuestionsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\ChapterOne;
 use App\Entity\ChapterTwo;
@@ -25,18 +26,21 @@ use Symfony\Component\HttpFoundation\Response;
   /**
    * @var ChapterOneRepository
    * @var ChapterTwoRepository
+   * @var QuestionsRepository
    * @var ObjectManager
    */
 
    private $repository;
    private $repositoryScnd;
+   private $repoThird;
    private $manager;
 
-   public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager)
+   public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager, QuestionsRepository $repoThird)
    {
      $this->manager = $manager;
      $this->repository = $repository;
      $this->repositoryScnd = $repositoryScnd;
+     $this->repoThird = $repoThird;
 
 
    }
@@ -65,10 +69,10 @@ use Symfony\Component\HttpFoundation\Response;
     */
    public function admin()
    {
- 
+      $questions= $this->repoThird->findAll();
       $chapterOne = $this->repository->findAll();
       $chapterTwo = $this->repositoryScnd->findAll();
-      return $this->render('pages/admin.html.twig', compact('chapterOne', 'chapterTwo'));
+      return $this->render('pages/admin.html.twig', compact('questions','chapterOne', 'chapterTwo'));
  
 
    }
