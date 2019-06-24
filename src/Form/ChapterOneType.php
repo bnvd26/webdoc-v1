@@ -17,7 +17,8 @@ class ChapterOneType extends AbstractType
             ->add('imageBackground')
             ->add('music')
             ->add('content')
-            ->add('filename', FileType::class);
+            ->add('filename', FileType::class)
+         
         ;
     }
 

@@ -4,9 +4,10 @@
       
 
                 <p class="ok">
-                    {{chapterOne.content}}
-                    {{chapterOne.id}}
-                    {{chapterOne.title}}
+                    {{chapterOne.content}}</p>
+                    <p>
+                    {{chapterOne.id}}</p>
+                    <p>{{chapterOne.title}}
                 </p>
                
                <p>
