@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-{% if app.user %}
+{% if is_granted('ROLE_ADMIN') %}
 <h1>Editer le details</h1>
 {{ form_start(form) }}
 {{ form_widget(form)}}

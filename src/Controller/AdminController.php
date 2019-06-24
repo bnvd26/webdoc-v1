@@ -6,12 +6,17 @@ use App\Controller\ApiController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ChapterOneRepository;
 use App\Repository\ChapterTwoRepository;
+use App\Repository\QuestionsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\ChapterOne;
 use App\Entity\ChapterTwo;
 use App\Form\ChapterOneType;
 use App\Form\ChapterTwoType;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use App\Entity\User;
+use Symfony\Component\HttpFoundation\Response;
 
 
 
@@ -21,24 +26,28 @@ use Doctrine\Common\Persistence\ObjectManager;
   /**
    * @var ChapterOneRepository
    * @var ChapterTwoRepository
+   * @var QuestionsRepository
    * @var ObjectManager
    */
 
    private $repository;
    private $repositoryScnd;
+   private $repoThird;
    private $manager;
 
-   public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager)
+   public function __construct(ChapterOneRepository $repository, ChapterTwoRepository $repositoryScnd, ObjectManager $manager, QuestionsRepository $repoThird)
    {
      $this->manager = $manager;
      $this->repository = $repository;
      $this->repositoryScnd = $repositoryScnd;
+     $this->repoThird = $repoThird;
+
 
    }
 
 
   /**
-   * @Route("api/admin", name="admin.connexion")
+   * @Route("api/connexion", name="admin.connexion")
    */
   public function administration()
   {
@@ -56,40 +65,49 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 
    /**
-    *@Route("api/admin/chapters", name="admin")
+    *@Route("api/admin/chapters", name="admin", methods="GET|POST")
     */
    public function admin()
    {
+      $questions= $this->repoThird->findAll();
       $chapterOne = $this->repository->findAll();
       $chapterTwo = $this->repositoryScnd->findAll();
-      return $this->render('pages/admin.html.twig', compact('chapterOne', 'chapterTwo'));
+      return $this->render('pages/admin.html.twig', compact('questions','chapterOne', 'chapterTwo'));
+ 
+
    }
 
 
     /**
-    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one")
+    *@Route("api/admin/chapters/chapterOne/create", name="admin.create.one", methods="POST|GET")
     */
 
-    public function create(Request $request)
+    public function create(Request $request) 
     {
         $chapterOne = new ChapterOne();
+        $chapterOne->setUpdated(new \DateTime());
         $form = $this->createForm(ChapterOneType::class, $chapterOne);
+        
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid())
         {
+                
           $this->manager->persist($chapterOne);
+          
           $this->manager->flush();
           return $this->redirectToRoute('admin');
         }
+  
         return $this->render('pages/create.html.twig',[
           'chapterOne'=>$chapterOne,
           'form'      => $form->createView()
         ]); 
-    }
+    
+  }
 
     /**
-    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two")
+    *@Route("api/admin/chapters/chapterTwo/create", name="admin.create.two", methods="POST|GET")
     */
 
     public function createTwo(Request $request)
