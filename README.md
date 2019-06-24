@@ -15,6 +15,10 @@ webdoc using symfony &amp; vueJS
 ## Init your database
 `php bin/console doctrine:database:create`
 
+`php bin/console make:migration`
+
+`php bin/console doctrine:schema:update --force`
+
 ## Run the project 
 
 `yarn install`
