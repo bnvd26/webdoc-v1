@@ -16,9 +16,8 @@
                     <p>{{ detail.content }}</p>
                     <img :src="detail.imageBackground">
                 </div>
-                
             </template>
-
+            <router-view></router-view>
      </div>
 </template>
 

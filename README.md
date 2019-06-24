@@ -1,30 +1,37 @@
 
 # webdoc-v1
 
-webdoc using symfony &amp; vueJS
+`webdoc using symfony &amp; vueJS`
 
 # With homebrew
 
-### Install composer
+### Install composer & Yarn
 
 `brew install composer`
 
-### To install the bundle 
+`brew install yarn`
+
+### To install the bundle
 
 `yarn install`
 
-### webpack
+### Webpack
 
 `composer require symfony/webpack-encore-bundle`
 
-### doctrine
+`yarn install`
+
+### Doctrine
 
 `composer require symfony/orm-pack`
 
-### init database
+### Init database
 
 `php bin/console doctrine:database:create`
 
+### Lancer server
+`yarn encore dev --watch`
+`php bin/console server:run`
 
 
 
