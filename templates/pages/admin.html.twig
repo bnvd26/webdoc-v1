@@ -1,37 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
+
+    {% extends 'base.html.twig' %}
         {% block body %}
-      
-   <h2>CHAPTER ONE</h2>
+      {% if is_granted('ROLE_ADMIN') %}
+   <h2 style="text-align:center;">CHAPTER ONE</h2>
+   <div style="margin-bottom: 80px;">
           {% for details in chapterOne %}
-
-          <p>{{details.id}}</p>
-          <a href={{ path('admin.edit', {id: details.id}) }}>Editer</a>
-          <form method="post" action="{{ path('admin.delete', {id: details.id}) }}">
+        <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
+        <img src="{{details.filename}}"/>
+          <p style="margin:0;">{{details.id}}</p>
+          <p style="margin:0;">{{details.title}}</p>
+          <a href={{ path('admin.edit.one', {id: details.id}) }} class="btn btn-primary">Editer</a>
+          <form method="post" action="{{ path('admin.delete.one', {id: details.id}) }}">
           <input type="hidden" name="_method" value="DELETE">
-          <button>Supprimer</button>
+          <button class="btn btn-danger">Supprimer</button>
           </form>
-          
+          </div>
           {% endfor %}
-          <a href={{ path('admin.create')}}>Creer un details</a>
-    <h2>CHAPTER TWO</h2>
-             {% for details in chapterTwo %}
+    
+          <a href={{ path('admin.create.one')}} class="btn btn-success" style="margin-left: 500px;">Creer un nouvel element</a>
+                  </div>
+    <h2 style="text-align:center;">CHAPTER TWO</h2>
+   
+             {% for detail in chapterTwo %}
+   <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
+             <p style="margin:0;">{{detail.id}}</p>
+             <p style="margin:0;">{{detail.title}}</p>
+             <a href={{ path('admin.edit.two', {id: detail.id}) }} style="text-align:center;" class="btn btn-primary">Editer</a>
+          <form method="post" action="{{ path('admin.delete.two', {id: detail.id}) }}">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="btn btn-danger">Supprimer</button>
+       
 
-          <p>{{details.id}}</p>
+           </div>
           {% endfor %}
-
+             <a href={{ path('admin.create.two')}} class="btn btn-success" style="margin-left: 500px;">Creer un nouvel element</a>
+        
+       
+        
+        {% else %}
+        <h3>ERREUR</h3>
+        <p>Il faut d'abord vous connectez pour acceder a cette partie de l'application</p>
+        <a href={{ path('admin.connexion') }}>Se connecter</a>
+        {% endif %}
         {% endblock %}
         {% block javascripts %}
          {{ encore_entry_script_tags('app') }}
         
         {% endblock %}
   
-    </body>
-   
-</html>

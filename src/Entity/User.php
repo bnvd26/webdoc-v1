@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface 
 {
     /**
      * @ORM\Id()
@@ -15,6 +17,9 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
+
+  
+    
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -30,6 +35,18 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $email;
+
+    /**
+    * @ORM\Column(type="string", unique=true)
+    */
+    private $apiToken;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+
 
     public function getId(): ?int
     {
@@ -60,6 +77,12 @@ class User
         return $this;
     }
 
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+        return $this;
+    }
+
     public function getEmail(): ?string
     {
         return $this->email;
@@ -71,4 +94,29 @@ class User
 
         return $this;
     }
+
+    public function eraseCredentials()
+    {
+         
+    }
+
+    public function getSalt()
+    {
+
+    }
+
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_ADMIN';
+        return array_unique($roles);
+    }
+
+    public function setApiToken($apiToken)
+    {
+        $this->apiToken = $apiToken;
+    }
+
+    
 }

@@ -3,11 +3,18 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ApiResource()
  * @ORM\Entity(repositoryClass="App\Repository\ChapterOneRepository")
+ * @Vich\Uploadable
  */
 class ChapterOne
 {
@@ -17,6 +24,20 @@ class ChapterOne
      * @ORM\Column(type="integer")
      */
     private $id;
+
+
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255)
+     */
+    private $filename;
+
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="chapterOne_image", fileNameProperty="filename")
+     */
+
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -37,6 +58,27 @@ class ChapterOne
      * @ORM\Column(type="text")
      */
     private $content;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Picture", mappedBy="chapterOne", orphanRemoval=true)
+     */
+    private $pictures;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+
+
+ 
+
+    public function __construct()
+    {
+        $this->pictures = new ArrayCollection();
+    }
+
+  
 
     public function getId(): ?int
     {
@@ -90,6 +132,96 @@ class ChapterOne
 
         return $this;
     }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setChapterOne($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->contains($picture)) {
+            $this->pictures->removeElement($picture);
+            // set the owning side to null (unless already changed)
+            if ($picture->getChapterOne() === $this) {
+                $picture->setChapterOne(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param null|string 
+     * @return chapterOne
+     */
+    public function setFilename(?string $filename): chapterOne
+    {
+        $this->filename = $filename;
+        return $this;
+    }
+
+    /**
+     * @return null|File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+
+        
+    }
+
+    /**
+     * @param null|File 
+     * @return chapterOne
+     */
+    public function setImageFile(?File $imageFile): chapterOne
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updated = new \DateTime('now');
+        }
+        return $this;
+    
+    }
+
+    public function getUpdated(): ?\DateTimeInterface
+    {
+        return $this->updated;
+    }
+
+    public function setUpdated(\DateTimeInterface $updated): self
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+
+
+
+
 
    
 }
