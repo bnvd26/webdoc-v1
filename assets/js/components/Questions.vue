@@ -15,7 +15,10 @@
                     {{level.reponseB}}</p>
                      <p class="ok" style="color:white">
                     {{level.reponseC}}</p>
-                    <router-link :to="level.link">Suivant</router-link>
+                    <p class="ok" style="color:white">
+                    {{level.link}}</p>
+                    
+                    <router-link :to="level.link" >Suivant</router-link>
      </div>
 
          </template>
@@ -29,8 +32,12 @@ export default {
             chap: ' ',
             chapterTwo: {},
             level: ' '
+    
         }
     },
+    
+
+    
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapters')
@@ -38,6 +45,8 @@ export default {
                            this.chap = response.data[1][0],
                            this.level = response.data[0][this.$route.params.id]
                            ))
+
+    
         
     }
 }
