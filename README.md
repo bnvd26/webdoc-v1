@@ -27,7 +27,7 @@ webdoc using symfony &amp; vueJS
 <br/>
 `php bin/console server:run`
 
-##loic
+
 
 
 
