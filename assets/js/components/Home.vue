@@ -1,13 +1,15 @@
 <template>
 
   <div id="app">
-      <div class="vz-wrapper">
-      <audio id="myAudio" src="http://localhost:8000/test2.mp3" data-author data-title></audio>
+      
+    <div class="vz-wrapper">
+        <audio id="myAudio" src="http://localhost:8000/test2.mp3" data-author="" data-title=""></audio>
 
-      <div class="vz-wrapper -canvas">
+        <div class="vz-wrapper -canvas">
         <canvas id="myCanvas" width="1920" height="800"></canvas>
-      </div>
+        </div>
     </div>
+
     <img class="speaker" src="../../img/speaker.svg" alt="Speaker">
 
     <p class="title">{{chapterOne.title}}</p>
@@ -22,7 +24,9 @@
 
 <script>
 import axios from "axios";
-import wave from '../vizualizer';
+import wave from '../save1';
+import redirect from '../redirect';
+
 
 export default {
   data() {
@@ -37,7 +41,7 @@ export default {
       .get("http://127.0.0.1:8001/api/chapters")
       .then(
         response => (
-          (this.chapterOne = response.data[0][0]),
+          (this.chapterOne = response.data[1][0]),
           (this.chap = response.data[1][0])
         )
       );
@@ -46,7 +50,7 @@ export default {
 </script>
 
 <style>
-        @font-face {
+    @font-face {
         font-family: "Gotham";
         src: url("../../fonts/Gotham-Bold.woff2") format("woff2"),
             url("../../fonts/Gotham-Bold.woff") format("woff");
@@ -114,9 +118,8 @@ export default {
 
     .vz-wrapper.-canvas {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: -10%;
+        transform: translateY(-15%);
         height: initial;
         width: initial;
     }

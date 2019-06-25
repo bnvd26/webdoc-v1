@@ -68,7 +68,7 @@ AUDIO.VISUALIZER = (function () {
      */
     Visualizer.prototype.setAnalyser = function () {
         this.analyser = this.ctx.createAnalyser();
-        this.analyser.smoothingTimeConstant = 0.9;
+        this.analyser.smoothingTimeConstant = 0.92;
         this.analyser.fftSize = FFT_SIZE;
         return this;
     };
@@ -114,7 +114,7 @@ AUDIO.VISUALIZER = (function () {
      * @return {Object}
      */
     Visualizer.prototype.setMediaSource = function () {
-        this.audioSrc = this.audio.getAttribute('src');
+        this.audioSrc = "http://localhost:8000/test2.mp3";
         return this;
     };
 
@@ -132,9 +132,6 @@ AUDIO.VISUALIZER = (function () {
         this.canvasCtx.shadowColor = this.shadowColor;
         this.canvasCtx.font = this.font.join(' ');
         this.canvasCtx.textAlign = 'center';
-        this.y = 0;
-        this.increment = true;
-
         return this;
     };
 
@@ -258,8 +255,12 @@ AUDIO.VISUALIZER = (function () {
 
         this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+
         this.renderByStyleType();
     };
+
+
+
 
     /**
      * @description
@@ -270,26 +271,6 @@ AUDIO.VISUALIZER = (function () {
     Visualizer.prototype.renderByStyleType = function () {
         return this[TYPE[this.style]]();
     };
-
-    Visualizer.prototype.setPos = function () {
-
-        if (this.increment) {
-            this.y++;
-
-            if (this.y == 25) {
-                this.increment = false;
-            }
-        }
-        else if (!this.increment) {
-            this.y--;
-
-            if (this.y == -25) {
-                this.increment = true;
-            }
-        }
-        return this.y
-    }
-
 
 
     /**
@@ -309,27 +290,27 @@ AUDIO.VISUALIZER = (function () {
         var Bx = (cx * 2) / 3
         var Dx = (cx * 2) / 2
 
-        this.setPos()
-        console.log(this.y)
 
-        let createCurve = (i, j, yStart, yEnd, inverter1, inverter2, n, mod, varBx, varDx, color) => {
-
+        let createCurve = (i, j, n, mody, varBx, varDx, mod, color) => {
+            
             var amplitudei = this.frequencyData[i * freqJump];
             var amplitudej = this.frequencyData[j * freqJump];
 
-
             this.canvasCtx.save();
             this.canvasCtx.beginPath();
-            this.canvasCtx.moveTo(0, cy + inverter1 * this.y + yStart + amplitudej/4);
-            this.canvasCtx.bezierCurveTo(varBx + 50, cy + n*amplitudei/mod, varDx, cy + n*amplitudej/mod, cx * 2, cy - 150 + inverter2 * this.y + yEnd + amplitudei/4);
-            this.canvasCtx.strokeStyle = color;
-            this.canvasCtx.stroke();
+            this.canvasCtx.moveTo(0, cy - (n*(amplitudej)/6) + mody);
+            this.canvasCtx.bezierCurveTo(varBx, cy - n*(amplitudei/mod), varDx, cy + n*(amplitudej/mod), cx * 2, cy-150 + (n*(amplitudei)/6) + mody);
+            this.canvasCtx.strokeStyle = color
+            this.canvasCtx.stroke()
+            
             this.canvasCtx.restore();
         }
 
-        createCurve(1, 4, 50, 50, 1, -1, -1, 1, Bx+100, Dx-50, '#f92965')
-        createCurve(8, 12, -50, 0, -1, 1, 1, 2, Bx-100, Dx+50, '#4B2ABF')
-        createCurve(16, 20, 25, -75, 1, 1, -1, 1.3, Bx+25, Dx-70, '#92FCFE')
+
+            createCurve(1, 20, 1, 25, Bx+100, Dx-50, 0.8, '#f92965')
+            createCurve(5, 15, -1, -15, Bx-100, Dx+50, 1, '#4B2ABF')
+            createCurve(8, 9, -1, 20, Bx+25, Dx-70, 0.5, '#92FCFE')
+
     };
 
     /**
@@ -365,8 +346,7 @@ AUDIO.VISUALIZER = (function () {
                 .setBufferSourceNode()
                 .setMediaSource()
                 .setCanvasStyles()
-                .bindEvents()
-                .setPos();
+                .bindEvents();
 
             return visualizer;
         };
