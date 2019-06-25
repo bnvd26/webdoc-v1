@@ -17,6 +17,7 @@
                     {{level.reponseC}}</p>
                     <p class="ok" style="color:white">
                     {{level.link}}</p>
+                   
                     
                     <router-link :to="level.link" >Suivant</router-link>
      </div>
@@ -35,7 +36,31 @@ export default {
     
         }
     },
-    
+
+    watch: {
+    '$route.params.id' (to, from) {
+      console.log(to, from)
+      if(to == 1)
+      {
+          axios
+        .get('http://127.0.0.1:8001/api/chapters')
+        .then(response => (
+            this.level = response.data[0][1]
+                           ))
+          
+      }
+      else if(to == 2)
+      {
+          axios
+        .get('http://127.0.0.1:8001/api/chapters')
+        .then(response => (
+            this.level = response.data[0][2]
+                           ))
+          
+      }
+    }
+  },
+
 
     
     async created () {

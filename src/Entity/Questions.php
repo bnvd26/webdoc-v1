@@ -37,6 +37,11 @@ class Questions
     private $reponseC;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $extrait;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $link;
@@ -105,4 +110,15 @@ class Questions
 
         return $this;
     }
+
+    public function getExtrait(): ?string
+    {
+        return $this->extrait;
+    }
+    public function setExtrait(?string $extrait): self
+    {
+        $this->extrait = $extrait;
+        return $this;
+    }
+
 }
