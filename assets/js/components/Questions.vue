@@ -15,11 +15,10 @@
                     {{level.reponseB}}</p>
                      <p class="ok" style="color:white">
                     {{level.reponseC}}</p>
-                    <p class="ok" style="color:white">
-                    {{level.link}}</p>
+                   
                    
                     
-                    <router-link :to="level.link" >Suivant</router-link>
+                    <router-link :to="level.link">Suivant</router-link>
      </div>
 
          </template>
@@ -39,7 +38,7 @@ export default {
 
     watch: {
     '$route.params.id' (to, from) {
-      console.log(to, from)
+      
       if(to == 1)
       {
           axios
