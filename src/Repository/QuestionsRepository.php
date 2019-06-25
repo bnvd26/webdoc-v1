@@ -51,12 +51,13 @@ class QuestionsRepository extends ServiceEntityRepository
     public function transform(Questions $questions)
     {
         return [
-                'id'      => (int) $questions->getId(),
+                'id'         => (int) $questions->getId(),
                 'question'   => (string) $questions->getQuestion(),
-                'reponseA' => (string) $questions->getReponseA(),
+                'reponseA'   => (string) $questions->getReponseA(),
                 'reponseB'   => (string) $questions->getReponseB(),
                 'reponseC'   => (string) $questions->getReponseC(),
                 'link'       => (string) $questions->getLink(),
+                'extrait'    => (string) $questions->getExtrait(),
                 
                 
         ];

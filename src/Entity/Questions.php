@@ -41,6 +41,11 @@ class Questions
      */
     private $link;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $extrait;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Questions
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getExtrait(): ?string
+    {
+        return $this->extrait;
+    }
+
+    public function setExtrait(?string $extrait): self
+    {
+        $this->extrait = $extrait;
 
         return $this;
     }
