@@ -196,10 +196,11 @@ class ChapterOne
      * @param null|File 
      * @return chapterOne
      */
-    public function setImageFile(?File $imageFile): chapterOne
+    public function setImageFile(?File $imageFile = null): chapterOne
     {
         $this->imageFile = $imageFile;
-        if ($this->imageFile instanceof UploadedFile) {
+        if ($this->imageFile instanceof UploadedFile) 
+        {
             $this->updated = new \DateTime('now');
         }
         return $this;

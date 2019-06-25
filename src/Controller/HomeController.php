@@ -17,7 +17,7 @@ class HomeController  extends Controller
         }
 
          /**
-         * @Route("/questions")
+         * @Route("/questions/{id}")
          */
         public function questions()
         {

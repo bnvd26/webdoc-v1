@@ -3,8 +3,8 @@ vich_uploader:
 
     mappings: 
         chapterOne_image:
-            uri_prefix: images/chapterOne_image/
-            upload_destination: '%kernel.project_dir%/../public/images/chapterOne_image'
+            uri_prefix: '/public/images/chapterOne'
+            upload_destination: '%kernel.project_dir%/public/images/chapterOne'
             namer: vich_uploader.namer_uniqid
            
 
