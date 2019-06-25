@@ -1,3 +1,27 @@
+<template>
+
+    <div class="screen">
+        <img class="speaker" src="../../images/speaker.svg" alt="Speaker">
+
+        <p class="extrait"><img class="note" src="../../img/note.svg" alt="Note de musique">{{level.extrait}}</p>
+
+        <p class="id__question">{{level.id}}<span>/3</span></p>
+        <p class="question">{{level.question}}</p>
+
+        <div class="response">
+            <div class="A">{{level.reponseA}}</div>
+            <div class="B">{{level.reponseB}}</div>
+            <div class="C">{{level.reponseC}}</div>
+        </div>
+
+        <router-link class="next" :to="level.link"><p>Suivant</p></router-link>
+    </div>
+
+</template>
+
+
+
+
 
         <template>
    <div>
@@ -31,7 +55,8 @@ export default {
             chapterOne: ' ',
             chap: ' ',
             chapterTwo: {},
-            level: ' '
+            level: ' ',
+        
     
         }
     },
