@@ -56,6 +56,7 @@ class QuestionsRepository extends ServiceEntityRepository
                 'reponseA' => (string) $questions->getReponseA(),
                 'reponseB'   => (string) $questions->getReponseB(),
                 'reponseC'   => (string) $questions->getReponseC(),
+                'link'       => (string) $questions->getLink(),
                 
                 
         ];
