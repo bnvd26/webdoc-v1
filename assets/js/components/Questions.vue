@@ -1,7 +1,7 @@
 <template>
-<transition v-on:enter="enter" v-on:leave="leave"  appear>
-    <div class="screen page">
-        <div class="center"></div>
+
+    <div class="screen">
+        
         <img class="speaker" src="../../images/speaker.svg" alt="Speaker">
 
         <p class="extrait"><img class="note" src="../../images/note.svg" alt="Note de musique">{{level.extrait}}</p>
@@ -17,7 +17,7 @@
 
         <router-link class="next" :to="level.link.toString()"><p>Suivant</p></router-link>
     </div>
-</transition>
+
 </template>
 
 
@@ -41,7 +41,6 @@ export default {
      
       if(to == 1)
       {
-
           axios
         .get('http://127.0.0.1:8001/api/chapters')
         .then(response => (
@@ -196,26 +195,6 @@ src: local('Gotham Bold'), url('../../css/GothamBold.woff') format('woff');
         color: #FFFFFF;
     }
 
-
-
-.page {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100vw;
-    height: 100vh;
-      }
-	
-	.center {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-		font-size: 3rem;
-		text-align: center;
-
-}
 
 
 
