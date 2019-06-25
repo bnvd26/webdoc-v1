@@ -92,7 +92,8 @@ use Symfony\Component\HttpFoundation\Response;
 
         if($form->isSubmitted() && $form->isValid())
         {
-                
+         
+
           $this->manager->persist($chapterOne);
           
           $this->manager->flush();
