@@ -46,7 +46,6 @@ export default {
         .then(response => (
             this.level = response.data[0][1]
         ))
-          
       }
       else if(to == 2)
       {
@@ -55,48 +54,16 @@ export default {
         .then(response => (
             this.level = response.data[0][2]
         ))
-          
       }
     }
   },
-  methods: {
-		enter: function enter(el, done) {
-			TweenMax.fromTo(el, 1, {
-				autoAlpha: 0,
-				scale: 1.5
-			}, {
-				autoAlpha: 1,
-				scale: 1,
-				transformOrigin: '50% 50%',
-				ease: Power4.easeOut,
-				onComplete: done
-			});
-		},
-		leave: function leave(el, done) {
-			TweenMax.fromTo(el, 1, {
-				autoAlpha: 1,
-				scale: 1
-			}, {
-				autoAlpha: 0,
-				scale: 0.8,
-				ease: Power4.easeOut,
-				onComplete: done
-			});
-		}
-	},
-
-
-    
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapters')
         .then(response => (this.chapterOne = response.data[0][0], 
                            this.chap = response.data[1][0],
                            this.level = response.data[0][this.$route.params.id]
-                           ))
-
-    
-        
+                           ))    
     }
 }
 </script>
