@@ -13,6 +13,7 @@ import Questions from './components/Questions.vue';
 const routes = [
   { path: '/', component: Home },
   { path: '/questions/:id', component: Questions, name: 'questions'},
+  { path: '/questions/:id/result', component: Home, name: 'result'}
 
 ]
 
