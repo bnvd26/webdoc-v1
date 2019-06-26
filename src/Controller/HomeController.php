@@ -21,7 +21,23 @@ class HomeController  extends Controller
          */
         public function questions()
         {
-            return $this->render('pages/questions.html.twig');
+            return $this->render('pages/home.html.twig');
+        }
+
+        /**
+         * @Route("/questions/{id}/result")
+         */
+        public function graf()
+        {
+            return $this->render('pages/home.html.twig');
+        }
+
+        /**
+         * @Route("/summary")
+         */
+        public function summary()
+        {
+            return $this->render('pages/home.html.twig');
         }
 
         

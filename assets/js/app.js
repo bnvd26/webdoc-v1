@@ -8,11 +8,14 @@ Vue.use(VueRouter)
 import Home from './components/Home.vue';
 import App from './components/App.vue';
 import Questions from './components/Questions.vue';
+import Summary from './components/Summary.vue';
 
 
 const routes = [
   { path: '/', component: Home },
   { path: '/questions/:id', component: Questions, name: 'questions'},
+  { path: '/questions/:id/result', component: Home, name: 'result'},
+  { path: '/summary', component: Summary, name: 'summary'}
 
 ]
 

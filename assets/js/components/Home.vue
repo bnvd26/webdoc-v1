@@ -15,6 +15,8 @@
 </template>
 <script>
 import axios from 'axios'
+import waves from '../waves'
+
 
 export default {
     data() {
@@ -142,6 +144,22 @@ export default {
         left: 50%;
         transform: translateX(-50%);
         animation: move 1s infinite alternate-reverse;
+    }
+
+    /* CANVAS */
+
+    .vz-wrapper {
+        position: absolute;
+        height: 10vh;
+        width: 100%;
+    }
+
+    .vz-wrapper.-canvas {
+        position: absolute;
+        top: -10%;
+        transform: translateY(-15%);
+        height: initial;
+        width: initial;
     }
 
     @keyframes move {

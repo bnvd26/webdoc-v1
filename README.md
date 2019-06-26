@@ -19,10 +19,6 @@ webdoc using symfony &amp; vueJS
 
 `php bin/console doctrine:schema:update --force`
 
-## Fixtures for the data
-
-`php bin/console doctrine:fixtures:load`
-
 ## Run the project 
 
 `yarn install`
