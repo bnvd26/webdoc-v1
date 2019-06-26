@@ -54,7 +54,7 @@ export default {
         .then(response => (
             this.level = response.data[0][2]
         ))
-      }
+      } 
     }
   },
     async created () {

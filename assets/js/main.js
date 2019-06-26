@@ -38,7 +38,19 @@ setTimeout(() => {
   var circleIntros = document.querySelectorAll('.element__text');
   var colorchangesstrokes = document.querySelectorAll('.stroke');
   var circleHs = document.querySelectorAll('.circleH');
-  var hovers = document.querySelectorAll('.hover')
+  var hovers = document.querySelectorAll('.hover');
+  var popup = document.getElementById('popup');
+  var infos = document.getElementById('infos');
+  var items = document.querySelectorAll('.item');
+  var titles = document.querySelectorAll('.item--title');
+  var svgsC = document.querySelectorAll('.center');
+  var svgsS = document.querySelectorAll('.stroke');
+  var basis = document.querySelector('.basis');
+  var hovered = document.querySelector('.hovered');
+  var menu = document.querySelector('.menu');
+  var first = document.querySelector('.first--arrow');
+  var second = document.querySelector('.second--arrow');
+  var next = document.querySelector('.next__chapter');
   
   partOne.onmouseover = function () {
     itemOne.style.opacity = '1';
@@ -177,6 +189,77 @@ setTimeout(() => {
 
 
 
+
+
+menu.addEventListener('mouseover', function () {
+  menu.classList.add('div--hover');
+  basis.classList.add('hidden');
+  hovered.classList.add('test');
+  titles[0].classList.add('visible');
+})
+
+menu.addEventListener('mouseout', function () {
+  menu.classList.remove('div--hover');
+  basis.classList.remove('hidden');
+  hovered.classList.remove('test');
+  titles[0].classList.remove('visible');
+})
+
+next.addEventListener('mouseover', function () {
+  next.classList.add('div--hover');
+  first.classList.add('first');
+  second.classList.add('second');
+  titles[5].classList.add('visible')
+})
+
+next.addEventListener('mouseout', function () {
+  next.classList.remove('div--hover');
+  first.classList.remove('first');
+  second.classList.remove('second');
+  titles[5].classList.remove('visible')
+})
+
+
+for (let i = 0; i < items.length; i++) {
+  let item = items[i];
+  let title = titles[i + 1];
+  let svgC = svgsC[i];
+  let svgS = svgsS[i];
+
+  item.addEventListener('mouseover', function () {
+    title.classList.add('visible');
+    item.classList.add('div--hover')
+    svgC.classList.add('circle--hover')
+    svgS.classList.add('stroke--hover')
+  })
+
+  item.addEventListener('mouseout', function () {
+    title.classList.remove('visible')
+    item.classList.remove('div--hover')
+    svgC.classList.remove('circle--hover')
+    svgS.classList.remove('stroke--hover')
+  })
+}
+
+var opened = false;
+infos.addEventListener('click', function () {
+  if (opened == false) {
+    popup.classList.add('clicked');
+    setTimeout(() => {
+      opened = true;
+    }, 100);
+  }
+
+
+});
+
+document.addEventListener('click', function () {
+  if (opened == true) {
+    popup.classList.remove('clicked');
+    opened = false
+  }
+
+})
 
 
 menu.addEventListener('mouseover', function () {

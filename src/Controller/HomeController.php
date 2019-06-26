@@ -40,6 +40,15 @@ class HomeController  extends Controller
             return $this->render('pages/home.html.twig');
         }
 
+
+        /**
+         * @Route("/chapterOne/{id}")
+         */
+        public function chapterOnet()
+        {
+            return $this->render('pages/home.html.twig');
+        }
+
         
 
 

@@ -7,7 +7,7 @@
         <canvas id="myCanvas" width="1920" height="800"></canvas>
         </div>
     </div>
-    <router-view/>
+    <router-view :key="$route.fullPath"/>
     </div>
 </template>
 
