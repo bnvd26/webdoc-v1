@@ -99,6 +99,61 @@
 
 
 </div>
+
+<div v-if="this.$route.params.id == 3">
+ <div class="hemispheres">
+    <div class="hemisphere hemisphere--gauche">
+      <h3 class="hemisphere__title">Hémisphère Gauche</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereGauche.png" alt="Hémisphère Gauche">
+    </div>
+
+    <img class="circle circle--one" src="../../images/circle.svg" alt="Circle">
+    <div class="zone zone--one">Lobe frontal</div>
+    <img class="circle circle--two" src="../../images/circle.svg" alt="Circle">
+    <div class="zone zone--two">Lobe pariétal</div>
+    <img class="circle circle--three" src="../../images/circle.svg" alt="Circle">
+    <div class="zone zone--three">Lobe temporal</div>
+    <img class="circle circle--four" src="../../images/circle.svg" alt="Circle">
+    <div class="zone zone--four">Cervelet</div>
+
+
+    <div class="hemisphere hemisphere--droit">
+      <h3 class="hemisphere__title">Hémisphère Droit</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereDroit.png" alt="Hémisphère Droit">
+    </div>
+
+    <img class="circle circle--five" src="../../images/circle.svg" alt="Circle">
+    <!--  Appartition au hover du cercle 5  -->
+    <div class="zone zone--five">Air de Broca</div>
+    <div class="hover__zone--none">
+      L’air de Broca analyse les mélodies.
+    </div>
+
+    <img class="circle circle--six" src="../../images/circle.svg" alt="Circle">
+    <!--  Appartition au hover du cercle 6  -->
+    <div class="zone zone--six">Air de Wernicke</div>
+    <div class="hover__zone">
+      L’air de Wernicke analyse la comparaison des hauteurs des notes.
+    </div>
+
+    <img class="circle circle--seven" src="../../images/circle.svg" alt="Circle">
+    <!--  Appartition au hover du cercle 7  -->
+    <div class="zone zone--seven">Cortex auditif</div>
+    <div class="hover__zone--none">
+      Les mélodies et les structures musicales complexes sont analysées par le cortex auditif situé dans le lobe temporal.
+    </div>
+  </div>
+
+  <div class="explications">
+    <p>le son n’est pas seulement traité par le <span class="lightBlue">cortex auditif</span>,</p>
+    <p>situé dans <span class="darkBlue">le lobe temporal</span>, mais par tout le cerveau.</p>
+  </div>
+
+  <div class="explications--none">
+    <p>Découvrez quelle partie de votre cerveau est <span class="lightBlue">activée</span>,</p>
+    <p>par les différentes <span class="darkBlue">composantes</span> de la musique.</p>
+  </div>
+</div>
   <div id="filter" class="filter"></div>
 
   <h1 id="title" class="title">{{chapterOnep.title}}</h1>
@@ -106,6 +161,7 @@
   <nav id="nav" class="nav">
     <!--  Menu cerveau icône  -->
     <div class="menu">
+      
       <svg class="basis" width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M29.1602 19.4923C29.72 18.6522 30 17.6039 30 16.6957C30 15.3263 29.3917 14.0542 28.3479 13.1915C28.5789 12.6395 28.6957 12.0653 28.6957 11.4783C28.6957 9.66163 27.6355 7.96937 26.0592 7.17913C26.2984 5.19561 25.0059 3.37748 23.0905 2.91372C22.3409 1.1807 20.6723 0 18.913 0C17.2754 0 15.8067 0.955174 15 2.34887C14.1933 0.955174 12.7245 0 11.087 0C9.32759 0 7.659 1.1807 6.90946 2.91378C4.98261 3.38048 3.70226 5.20767 3.94076 7.17913C2.36459 7.9693 1.30435 9.66163 1.30435 11.4783C1.30435 12.0653 1.42109 12.6395 1.65209 13.1915C0.608283 14.0542 0 15.3263 0 16.6957C0 17.6087 0.282391 18.6556 0.839804 19.4922C0.295109 20.2612 0 21.1724 0 22.1087C0 23.3228 0.492261 24.4793 1.36298 25.3381C0.915326 28.0441 3.07337 30.7826 5.86957 30.7826C5.88978 30.7826 5.90967 30.7823 5.92917 30.7817C6.85624 32.381 8.57707 33.3913 10.4348 33.3913C12.371 33.3913 14.101 32.2291 15 30.5547C15.899 32.2291 17.629 33.3913 19.5652 33.3913C21.4229 33.3913 23.1438 32.381 24.0708 30.7817C24.0904 30.7823 24.1102 30.7826 24.1304 30.7826C26.605 30.7826 28.6957 28.6024 28.6957 26.0217C28.6957 25.802 28.6763 25.576 28.637 25.3381C29.5077 24.4793 30 23.3228 30 22.1087C30 21.1724 29.7049 20.2612 29.1602 19.4923ZM14.3478 9.87267C13.9638 9.64996 13.5185 9.52174 13.0435 9.52174C12.6833 9.52174 12.3913 9.81372 12.3913 10.1739C12.3913 10.5341 12.6833 10.8261 13.0435 10.8261C13.7627 10.8261 14.3478 11.4112 14.3478 12.1304V24.5328C13.391 23.4475 11.992 22.7609 10.4348 22.7609C10.0746 22.7609 9.78261 23.0528 9.78261 23.413C9.78261 23.7732 10.0746 24.0652 10.4348 24.0652C12.5924 24.0652 14.3478 25.8206 14.3478 27.9783C14.3478 30.2054 12.5558 32.087 10.4348 32.087C8.92487 32.087 7.53489 31.1941 6.89354 29.8122C6.7753 29.5575 6.50752 29.4073 6.22833 29.4387C6.18222 29.444 6.13637 29.4502 6.09052 29.4564C4.23443 29.7102 2.14422 27.6085 2.71004 25.2573C2.76815 25.0158 2.68402 24.7623 2.49313 24.6035C1.73765 23.9748 1.30435 23.0655 1.30435 22.1087C1.30435 21.5171 1.47163 20.9382 1.78291 20.4305C2.56513 21.0716 3.53811 21.4565 4.56522 21.4565C4.92541 21.4565 5.21739 21.1645 5.21739 20.8043C5.21739 20.4442 4.92541 20.1522 4.56522 20.1522C2.79528 20.1522 1.30435 18.5367 1.30435 16.6957C1.30435 15.5788 1.87363 14.5514 2.8273 13.9473C3.12111 13.7611 3.21717 13.3772 3.04559 13.0747C2.7557 12.5634 2.6087 12.0263 2.6087 11.4783C2.6087 9.71804 4.04361 8.02174 5.86957 8.02174C7.6067 8.02174 9.13043 9.63698 9.13043 11.4783C9.13043 11.8385 9.42241 12.1304 9.78261 12.1304C10.1428 12.1304 10.4348 11.8385 10.4348 11.4783C10.4348 8.89761 8.34417 6.71739 5.86957 6.71739C5.65122 6.71739 5.43404 6.73506 5.21902 6.76852C5.2187 6.75137 5.21739 6.73467 5.21739 6.71739C5.21739 5.26193 6.39893 4.1087 7.82609 4.1087C8.52274 4.1087 9.17804 4.38006 9.67122 4.87272C9.92602 5.12726 10.3389 5.127 10.5935 4.87226C10.8481 4.61739 10.8479 4.2045 10.5931 3.94996C9.99809 3.35563 9.24554 2.97659 8.43 2.85098C9.00515 1.99722 9.96157 1.30435 11.087 1.30435C12.8241 1.30435 14.3478 2.91952 14.3478 4.76087V9.87267ZM25.4348 21.4565C26.462 21.4565 27.4349 21.0715 28.2172 20.4307C28.5284 20.9383 28.6957 21.5172 28.6957 22.1087C28.6957 23.0655 28.2623 23.9748 27.5069 24.6035C27.316 24.7623 27.2319 25.0158 27.29 25.2573C27.3592 25.5444 27.3913 25.7873 27.3913 26.0217C27.3913 28.046 25.5603 29.6821 23.9095 29.4564C23.8637 29.4502 23.8178 29.444 23.7717 29.4387C23.4921 29.4071 23.2246 29.5575 23.1065 29.8122C22.4652 31.1941 21.0751 32.087 19.5652 32.087C17.4442 32.087 15.6522 30.2054 15.6522 27.9783C15.6522 25.8206 17.4076 24.0652 19.5652 24.0652C19.9253 24.0652 20.2174 23.7732 20.2174 23.413C20.2174 23.0528 19.9253 22.7609 19.5652 22.7609C18.008 22.7609 16.609 23.4475 15.6522 24.5328V12.1304C15.6522 11.4112 16.2373 10.8261 16.9565 10.8261C17.3167 10.8261 17.6087 10.5341 17.6087 10.1739C17.6087 9.81372 17.3167 9.52174 16.9565 9.52174C16.4815 9.52174 16.0362 9.64996 15.6522 9.87267V4.76087C15.6522 2.91952 17.1759 1.30435 18.913 1.30435C20.0384 1.30435 20.9948 1.99722 21.5699 2.85091C20.7545 2.97652 20.002 3.35557 19.4069 3.94989C19.1521 4.20443 19.1518 4.61733 19.4063 4.8722C19.6609 5.12707 20.0739 5.12726 20.3287 4.87272C20.822 4.38006 21.4773 4.1087 22.1739 4.1087C23.6082 4.1087 24.7826 5.26872 24.7826 6.71739C24.7826 6.73461 24.7813 6.75137 24.781 6.76852C24.566 6.73506 24.3488 6.71739 24.1304 6.71739C21.6558 6.71739 19.5652 8.89761 19.5652 11.4783C19.5652 11.8385 19.8573 12.1304 20.2174 12.1304C20.5775 12.1304 20.8696 11.8385 20.8696 11.4783C20.8696 9.63698 22.3933 8.02174 24.1304 8.02174C25.9553 8.02174 27.3913 9.7172 27.3913 11.4783C27.3913 12.0263 27.2443 12.5634 26.9544 13.0747C26.7829 13.3772 26.879 13.7611 27.1728 13.9473C28.1264 14.5514 28.6957 15.5788 28.6957 16.6957C28.6957 18.5433 27.1995 20.1522 25.4348 20.1522C25.0747 20.1522 24.7826 20.4442 24.7826 20.8043C24.7826 21.1645 25.0747 21.4565 25.4348 21.4565Z"
@@ -129,7 +185,7 @@
           d="M24.0196 23.1268C23.0229 21.3686 21.1281 20.1523 18.913 20.1523C18.5529 20.1523 18.2609 20.4443 18.2609 20.8045C18.2609 21.1647 18.5529 21.4567 18.913 21.4567C20.6283 21.4567 22.1063 22.3965 22.8847 23.77C23.0626 24.0838 23.4608 24.1932 23.7737 24.0158C24.0871 23.8382 24.1971 23.4402 24.0196 23.1268Z"
           fill="white" />
       </svg>
-
+<router-link  class="menu__title item--title" to="/summary">
       <svg class="hovered" xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34">
         <defs>
 
@@ -145,7 +201,7 @@
         </g>
       </svg>
 
-      <p class="menu__title item--title">Menu</p>
+      <p>Menu</p></router-link>
     </div>
     <!--  Sous parties  -->
       <div class="item item__one">
@@ -165,7 +221,7 @@
       <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <p class="one__title item--title">Le cerveau</p>
+      <router-link tag="p" to="/chapterOne/2" class="one__title item--title">Le cerveau</router-link>
     </div>
     <div class="item item__three">
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1191,6 +1247,202 @@ body {
   to {
     bottom: 2%;
   }
+}
+
+
+.title__cerveau {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.subtitle__cerveau {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 18px;
+  color: #92FCFE;
+  text-transform: uppercase;
+}
+
+.hemispheres {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 40vh;
+}
+
+.hemisphere {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hemisphere__title {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.circle {
+  position: absolute;
+  width: 2%;
+}
+
+.zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 10vw;
+  height: 4vh;
+  background-color: rgba(31, 31, 31);
+  border-radius: 10px;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  color: #92FCFE;
+}
+
+.circle--one {
+  top: 30%;
+  left: 17%;
+}
+
+.zone--one {
+  top: 10%;
+  left: -2%;
+}
+
+.circle--two {
+  top: 55%;
+  left: 25%;
+}
+
+.zone--two {
+  top: 20%;
+  left: 38%;
+}
+
+.circle--three {
+  top: 40%;
+  left: 30%;
+}
+
+.zone--three {
+  top: 65%;
+  left: 40%;
+}
+
+.circle--four {
+  top: 75%;
+  left: 30%;
+}
+
+.zone--four {
+  top: 85%;
+  left: 35%;
+}
+
+.circle--five {
+  top: 45%;
+  right: 28%;
+}
+
+.zone--five {
+  top: 25%;
+  right: 40%;
+}
+
+.circle--six {
+  top: 43%;
+  right: 18%;
+}
+
+.zone--six {
+  top: 25%;
+  right: -2%;
+}
+
+.circle--seven {
+  top: 60%;
+  right: 25%;
+}
+
+.zone--seven {
+  top: 75%;
+  right: 2%;
+}
+
+.hover__zone {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  background: rgba(31, 31, 31, 0.5);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  width: 18vw;
+  padding: 10px;
+}
+
+.hover__zone--none {
+  display: none;
+}
+
+.explications {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.explications--none {
+  display: none;
+}
+
+.explications p {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.darkBlue {
+  color: #4B2ABF;
+}
+
+.lightBlue {
+  color: #92FCFE;
 }
     
 

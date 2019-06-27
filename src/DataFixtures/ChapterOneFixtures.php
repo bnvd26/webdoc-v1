@@ -31,6 +31,25 @@ class ChapterOneFixtures extends Fixture
             $chapterOne->setUpdated((new \DateTime()));
             $manager->persist($chapterOne);
 
+            $chapterOne = new ChapterOne();
+            $chapterOne->setTitle("Le cerveau");
+            $chapterOne->setContent("Qu'est ce que la musique ?");
+            $chapterOne->setMusic('Pour une meilleure expérience, montez le son ou mettez votre casque');
+            $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
+            $chapterOne->setFilename('/public/images/bla');
+            $chapterOne->setUpdated((new \DateTime()));
+            $manager->persist($chapterOne);
+
+
+            $chapterOne = new ChapterOne();
+            $chapterOne->setTitle("Votre cerveau reagit a la musique");
+            $chapterOne->setContent("Qu'est ce que la musique ?");
+            $chapterOne->setMusic('Pour une meilleure expérience, montez le son ou mettez votre casque');
+            $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
+            $chapterOne->setFilename('/public/images/bla');
+            $chapterOne->setUpdated((new \DateTime()));
+            $manager->persist($chapterOne);
+
             $manager->flush();
     }
 }
