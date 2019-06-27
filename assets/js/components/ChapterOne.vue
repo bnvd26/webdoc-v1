@@ -72,7 +72,7 @@
       <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <p class="two__title item--title">Les émotions</p>
+      <router-link tag="p" to="/chapterOne/7" class="two__title item--title">Les émotions</router-link>
     </div>
     <div class="item item__four">
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@
   </nav>
 
 
-  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1 && this.$route.params.id != 4 &&this.$route.params.id != 5">
+  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1 && this.$route.params.id != 4 &&this.$route.params.id != 5 && this.$route.params.id != 6 && this.$route.params.id != 8 && this.$route.params.id != 9 && this.$route.params.id != 10 && this.$route.params.id != 11">
   <h1 id="title" class="title">{{chapterOnep.title}}</h1>
   </div>
 <div v-if="this.$route.params.id == 0">
@@ -222,15 +222,20 @@
         viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        style="top: 30%;
+  left: 17%;"
       >
         <use xlink:href="#gradient" x="120" y="60"></use>
         <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
         <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
-      <div class="zone zone--one">Lobe frontal</div>
+      <div class="zone zone--one" style=" top: 10%;
+  left: -2%;">Lobe frontal</div>
       <svg
         class="circle circle--two"
+        style="top: 55%;
+  left: 25%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -247,9 +252,12 @@
         <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
-      <div class="zone zone--two">Lobe pariétal</div>
+      <div class="zone zone--two" style="top: 20%;
+  left: 38%;">Lobe pariétal</div>
       <svg
         class="circle circle--three"
+        style="top: 40%;
+  left: 30%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -261,9 +269,11 @@
         <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
-      <div class="zone zone--three">Lobe temporal</div>
+      <div class="zone zone--three" style="top: 65%;
+  left: 40%;">Lobe temporal</div>
       <svg
-        class="circle circle--four"
+        class="circle circle--four" style="top: 75%;
+  left: 30%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -275,7 +285,8 @@
         <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
-      <div class="zone zone--four">Cervelet</div>
+      <div class="zone zone--four" style="top: 85%;
+  left: 35%;">Cervelet</div>
 
       <div class="hemisphere hemisphere--droit">
         <h3 class="hemisphere__title">Hémisphère Droit</h3>
@@ -287,7 +298,8 @@
       </div>
 
       <svg
-        class="circle circle--five"
+        class="circle circle--five" style="top: 45%;
+  right: 28%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -300,11 +312,13 @@
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
       <!--  Appartition au hover du cercle 5  -->
-      <div class="zone zone--five">Air de Broca</div>
+      <div class="zone zone--five" style="top: 25%;
+  right: 40%;">Air de Broca</div>
       <div class="hover__zone">L’air de Broca analyse les mélodies.</div>
 
       <svg
-        class="circle circle--six"
+        class="circle circle--six" style="top: 43%;
+  right: 18%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -317,11 +331,14 @@
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
       <!--  Appartition au hover du cercle 6  -->
-      <div class="zone zone--six">Air de Wernicke</div>
+      <div class="zone zone--six" style="top: 25%;
+  right: -2%;">Air de Wernicke</div>
       <div class="hover__zone">L’air de Wernicke analyse la comparaison des hauteurs des notes.</div>
 
       <svg
         class="circle circle--seven"
+        style="top: 60%;
+  right: 25%;"
         width="38"
         height="38"
         viewBox="0 0 38 38"
@@ -334,7 +351,8 @@
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
       <!--  Appartition au hover du cercle 7  -->
-      <div class="zone zone--seven">Cortex auditif</div>
+      <div class="zone zone--seven" style="top: 75%;
+  right: 2%;">Cortex auditif</div>
       <div
         class="hover__zone"
       >Les mélodies et les structures musicales complexes sont analysées par le cortex auditif situé dans le lobe temporal.</div>
@@ -371,7 +389,7 @@
       <div class="hemispheres">
     <div class="hemisphere hemisphere--gauche">
       <h3 class="hemisphere__title">Écoute d'un son</h3>
-      <img class="hemisphere__picture" src="../../images/hemisphereGauche3.png" alt="Hémisphère Gauche">
+      <img class="hemisphere__picture" src="../../images/hemisphereGauche2.png" alt="Hémisphère Gauche">
     </div>
 
     <svg
@@ -419,7 +437,7 @@
 
     <div class="hemisphere hemisphere--droit">
       <h3 class="hemisphere__title">Écoute d'une musique</h3>
-      <img class="hemisphere__picture" src="../../images/hemisphereDroit3.png" alt="Hémisphère Droit">
+      <img class="hemisphere__picture" src="../../images/hemisphereDroit2.png" alt="Hémisphère Droit">
     </div>
 
     <svg
@@ -473,7 +491,7 @@
         <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
       </svg>
     <!--  Appartition au hover du cercle 5  -->
-    <div class="zone zone--five" style="top: 85%;
+    <div class="zone zone--five" style="top: 70%;
   right: 38%;">Cortex temporal</div>
 
     <!--  Appartition au hover d'un des trois cercles  -->
@@ -490,23 +508,366 @@
 </div>
 <div v-if="this.$route.params.id == 5">
  <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+ <div class="hemispheres">
+    <div class="hemisphere hemisphere--gauche">
+      <h3 class="hemisphere__title">Écoute d’une musique familière</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereGauche3.png" alt="Hémisphère Gauche">
+    </div>
+
+    <svg
+        class="circle circle--one"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 35%;
+  left: 16%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 1  -->
+    <div class="zone zone--one" style="top: 20%;
+  left: -5%;">Tronc cérébral</div>
+    
+    <svg
+        class="circle circle--two"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 62%;
+  left: 22.5%;
+  width: 1.5%;"
+      >
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4B2ABF"></stop>
+            <stop offset="100%" stop-color="#92FCFE"></stop>
+          </linearGradient>
+        </defs>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 2  -->
+    <div class="zone zone--two" style="top: 85%;
+  left: 35%;">Hippocampe</div>
+
+    <!--  Appartition au hover d'un des deux cercles  -->
+    <div class="hover__zone hover__zone--left">
+      Active des régions impliquées dans la mémoire. Ce sont, par exemple, l’hippocampe et les aires du cortex frontal.
+    </div>
+
+
+    <div class="hemisphere hemisphere--droit">
+      <h3 class="hemisphere__title">Invention d’une musique</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereDroit3.png" alt="Hémisphère Droit">
+    </div>
+
+    <svg
+        class="circle circle--three"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 35%;
+  right: 33%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 3  -->
+    <div class="zone zone--three" style="top: 25%;
+  right: 40%;">Cortex Frontal</div>
+
+    <svg
+        class="circle circle--four"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 55%;
+  right: 25%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 4  -->
+    <div class="zone zone--four" style="top: 75%;
+  right: 40%;
+  width: 12vw;">Cortex Temporal</div>
+
+    <!--  Appartition au hover d'un des deux cercles  -->
+    <div class="hover__zone hover__zone--right">
+      En chantant par exemple, on met en jeu certaines régions situées dans les cortex frontal et temporal.
+    </div>
+  </div>
+
+  <div class="explications">
+    <p>Ces zones dépendent aussi du niveau de maîtrise du son :</p>
+    <p>musique familère ou invention.</p>
+  </div>
 </div>
-  
+
+
  
+
+<div v-if="this.$route.params.id == 6">
+    <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+  <div class="hemispheres">
+    <div class="hemisphere hemisphere--gauche">
+      <h3 class="hemisphere__title">Écoute d’une musique famillière</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereGauche4.png" alt="Hémisphère Gauche">
+    </div>
+
+    <svg
+        class="circle circle--one"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 35%;
+  left: 16%;"
+      >
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4B2ABF"></stop>
+            <stop offset="100%" stop-color="#92FCFE"></stop>
+          </linearGradient>
+        </defs>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg> 
+    <!--  Appartition au hover du cercle 1  -->
+    <div class="zone zone--one" style="top: 10%;
+  left: 0;">Cortex moteur</div>
+    
+    <svg
+        class="circle circle--two"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 40%;
+  left: 22%;
+  width: 1.5%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 2  -->
+    <div class="zone zone--two" style="top: 65%;
+  left: -5%;">Cortex frontal</div>
+
+    <svg
+        class="circle circle--three"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 75%;
+  left: 30%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 3  -->
+    <div class="zone zone--three" style="top: 85%;
+  left: 35%;">Cervelet</div>
+
+    <!--  Appartition au hover d'un des trois cercles  -->
+    <div class="hover__zone hover__zone--left">
+      Battre la mesure nécessite une synchronisation temporelle et implique le cervelet et les cortex moteur et frontal.
+    </div>
+
+
+    <div class="hemisphere hemisphere--droit">
+      <h3 class="hemisphere__title">Invention d’une musique</h3>
+      <img class="hemisphere__picture" src="../../images/hemisphereDroit4.png" alt="Hémisphère Droit">
+    </div>
+
+    <svg
+        class="circle circle--four"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 55%;
+  right: 34%;
+  width: 1.5%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 4  -->
+    <div class="zone zone--four" style="top: 25%;
+  right: 40%;
+  width: 14vw;">Cortex orbitofrontal</div>
+
+    <svg
+        class="circle circle--five"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="top: 61%;
+  right: 26%;
+  width: 1.5%;"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+    <!--  Appartition au hover du cercle 5  -->
+    <div class="zone zone--five" style="top: 75%;
+  right: 34%;
+  width: 14vw;">Amygdale cérébrale
+  </div>
+
+    <!--  Appartition au hover d'un des deux cercles  -->
+    <div class="hover__zone hover__zone--right">
+      Les émotions ressenties à l’écoute musicale activent les structures participant aux émotions comme l’amygdale cérébrale et le cortex orbitofrontal.
+    </div>
+  </div>
+  </div>
+ 
+
+<div v-if="this.$route.params.id == 8">
+    <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+ <img class="schéma" src="../../images/schéma.png" alt="Schéma">
+
+    <div class="explications">
+      <p>
+        {{chapterOnep.content}}
+      </p>
+    </div>
+  </div>
+
+  <div v-if="this.$route.params.id == 9">
+<h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+<img class="dopamine" src="../../images/dopamine.png" alt="Dopamine">
+
+    <div class="explications">
+      <p>Vos émotions ont une origine biochimique au niveau du cerveau, notamment</p>
+      <p>
+        Grâce à un neurotransmetteur appellé la
+        <span class="lightBlue">dopamine</span>, qui aura une
+      </p>
+      <p>influence singulière sur vous ( propre à chaque individu).</p>
+    </div>
+</div>
+
+
+<div v-if="this.$route.params.id == 10">
+<h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+ <img class="video__dopamine" src="../../images/vidéo1.png">
+
+  <div class="explications--none">
+    <p>La dopamine est un <span class="lightBlue">neurotransmetteur</span> qui transmet l’information entre les neurones.</p>
+  </div>
+
+  <div class="explications--none">
+    <p>Lorsque le circuit de la récompense est activé, les neurones libèrent de la</p>
+    <p>dopamine. celle-ci permet non seulement au cerveau  de procurer une sensation</p>
+    <p>de <span class="darkBlue">plaisir immédiate</span>, mais aussi de mémoriser <span class="lightBlue">les expériences agréables.</span></p>
+  </div>
+
+  <div class="explications">
+    <p>Lorsque la production ou la circulation de la dopamine est <span class="pink">interrompue</span></p>
+    <p>ou <span class="darkBlue">entravée</span>, la communication des cellules nerveuses ne se déroule pas</p>
+    <p>comme prévu et cela peut entraîner la depression.</p>
+  </div>
+</div>
+
+<div v-if="this.$route.params.id == 11">
+   
+<div
+      style="display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;"
+    >
+     <h1 id="title" class="title">{{chapterOnep.title}}</h1>
+      <p style="font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 10px;">
+        La dopamine est donc un
+        <span class="darkBlue">neurotransmetteur</span> important pour la gestion
+      </p>
+      <p>des émotions selon sa concentration dans le cerveau.</p>
+      <p>La quantité de dopamine produite et donc ses effets, varient d’une</p>
+      <p>personne à une autre.</p>
+      <p>ainsi, nos quantités de dopamine produites à l’écoute de musique</p>
+      <p>
+        influencent
+        <span class="darkBlue">nos émotions</span> de manières singulières.
+      </p>
+    </div>
+
+    <div style="display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;">
+      <p style="font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  color: #92fcfe;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;">mais alors en quoi sommes nous égaux dans certaines de nos réactions face à la musique ?</p>
+    </div>
+
+</div>
+
   </div>
 
 
 
-
-
-
-
-
-
-
-
-
 </template>
+
+
+
 <script>
 import axios from 'axios'
 import main from '../main'
@@ -522,29 +883,6 @@ export default {
             sound: null
         }
     },
-
-
-    watch: {
-    '$route.params.id' (to, from) {
-     
-    
-   console.log(to)
-     
-      if(to == 1)
-      {
-         
-          axios
-        .get('http://127.0.0.1:8001/api/chapters')
-        .then(response => (
-            this.chapterOnep = response.data[1][1],
-            this.parts = response.data[1][this.$route.params.id]
-        ))
-      } 
-      
-    }
-  },
-
-  
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapters')
@@ -554,6 +892,23 @@ export default {
                           
       ))   
     },
+
+
+    watch: {
+    '$route.params.id' (to, from) {
+     
+    
+
+      console.log('test')
+    
+     
+  
+      
+    }
+  },
+
+  
+    
 
   
 }
@@ -1575,75 +1930,6 @@ body {
   color: #92FCFE;
 }
 
-.circle--one {
-  top: 30%;
-  left: 17%;
-}
-
-.zone--one {
-  top: 10%;
-  left: -2%;
-}
-
-.circle--two {
-  top: 55%;
-  left: 25%;
-}
-
-.zone--two {
-  top: 20%;
-  left: 38%;
-}
-
-.circle--three {
-  top: 40%;
-  left: 30%;
-}
-
-.zone--three {
-  top: 65%;
-  left: 40%;
-}
-
-.circle--four {
-  top: 75%;
-  left: 30%;
-}
-
-.zone--four {
-  top: 85%;
-  left: 35%;
-}
-
-.circle--five {
-  top: 45%;
-  right: 28%;
-}
-
-.zone--five {
-  top: 25%;
-  right: 40%;
-}
-
-.circle--six {
-  top: 43%;
-  right: 18%;
-}
-
-.zone--six {
-  top: 25%;
-  right: -2%;
-}
-
-.circle--seven {
-  top: 60%;
-  right: 25%;
-}
-
-.zone--seven {
-  top: 75%;
-  right: 2%;
-}
 
 
 
@@ -1786,76 +2072,6 @@ body {
   opacity: 1;
 }
 
-.circle--one {
-  top: 30%;
-  left: 17%;
-}
-
-.zone--one {
-  top: 10%;
-  left: -2%;
-}
-
-.circle--two {
-  top: 55%;
-  left: 25%;
-}
-
-.zone--two {
-  top: 20%;
-  left: 38%;
-}
-
-.circle--three {
-  top: 40%;
-  left: 30%;
-}
-
-.zone--three {
-  top: 65%;
-  left: 40%;
-}
-
-.circle--four {
-  top: 75%;
-  left: 30%;
-}
-
-.zone--four {
-  top: 85%;
-  left: 35%;
-}
-
-.circle--five {
-  top: 45%;
-  right: 28%;
-}
-
-.zone--five {
-  top: 25%;
-  right: 40%;
-}
-
-.circle--six {
-  top: 43%;
-  right: 18%;
-}
-
-.zone--six {
-  top: 25%;
-  right: -2%;
-}
-
-.circle--seven {
-  top: 60%;
-  right: 25%;
-}
-
-.zone--seven {
-  top: 75%;
-  right: 2%;
-}
-
 .hover__zone {
   opacity: 0;
   transition: all 0.5s;
@@ -1920,7 +2136,38 @@ body {
 .lightBlue {
   color: #92fcfe;
 }
+
+.schéma {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.darkBlue {
+  color: #4B2ABF;
+}
+
+.lightBlue {
+  color: #92FCFE;
+}
+
+
+.dopamine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
     
+.video__dopamine {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}    
 
 
 
