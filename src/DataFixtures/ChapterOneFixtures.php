@@ -23,8 +23,8 @@ class ChapterOneFixtures extends Fixture
             $manager->persist($chapterOne);
 
             $chapterOne = new ChapterOne();
-            $chapterOne->setTitle("L'influence de la musique sur le cerveau");
-            $chapterOne->setContent("À quel point la musique influence-t-elle nos vies ?");
+            $chapterOne->setTitle("Qu'est ce que la musique ?");
+            $chapterOne->setContent("Qu'est ce que la musique ?");
             $chapterOne->setMusic('Pour une meilleure expérience, montez le son ou mettez votre casque');
             $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
             $chapterOne->setFilename('/public/images/bla');

@@ -188,6 +188,35 @@ export default {
 
         
 <style scoped>
+
+/* Reset CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px sans-serif;
+  margin: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
   @font-face {
         font-family: 'Gotham';
         src: url('../../fonts/Gotham-Bold.woff2') format('woff2'),
