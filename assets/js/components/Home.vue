@@ -5,9 +5,9 @@
 
         <p class="title">{{chapterOne.title}}</p>
 
-        <p class="content">{{chapterOne.music}}</p>
+        <p class="content">{{chapterOne.question}}</p>
 
-        <p class="music">{{chapterOne.content}}</p>
+        <p class="music">{{chapterOne.guide}}</p>
 
         <img class="scroll" src="../../images/scroll.svg" alt="Scroll Down">
 

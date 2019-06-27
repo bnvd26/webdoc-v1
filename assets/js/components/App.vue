@@ -2,7 +2,7 @@
 
     <div>
         <div class="vz-wrapper">
-        <audio id="myAudio" :src="chapterOne.image" data-author="" data-title=""></audio>
+        <audio id="myAudio" :src="chapterOne.sound" data-author="" data-title=""></audio>
         <div class="vz-wrapper -canvas">
         <canvas id="myCanvas" width="1920" height="800"></canvas>
         </div>

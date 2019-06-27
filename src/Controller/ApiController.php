@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Repository\ChapterOneRepository;
 use App\Repository\ChapterTwoRepository;
 use App\Repository\QuestionsRepository;
+use App\Repository\HomepageRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -19,12 +20,13 @@ class ApiController
    /**
     * @Route("api/chapters", methods="GET", name="chapters.json")
     */
-    public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository, QuestionsRepository $questionsRepository)
+    public function chapterOne(ChapterOneRepository $chapterOneRepository, ChapterTwoRepository $chapterTwoRepository, QuestionsRepository $questionsRepository, HomepageRepository $homepageRepository)
     {
         $questions = $questionsRepository->transformAll();
+        $homepage = $homepageRepository->transformAll();
         $chapterOne = $chapterOneRepository->transformAll();
         $chapterTwo = $chapterTwoRepository->transformAll();
-        return $this->respond([$questions, $chapterOne, $chapterTwo]);
+        return $this->respond([$questions, $homepage, $chapterOne, $chapterTwo]);
     }
 
 
