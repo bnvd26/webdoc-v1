@@ -46,6 +46,11 @@ class Questions
      */
     private $link;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $linkSumm;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -118,6 +123,18 @@ class Questions
     public function setExtrait(?string $extrait): self
     {
         $this->extrait = $extrait;
+        return $this;
+    }
+
+    public function getLinkSumm(): ?string
+    {
+        return $this->linkSumm;
+    }
+
+    public function setLinkSumm(string $linkSumm): self
+    {
+        $this->linkSumm = $linkSumm;
+
         return $this;
     }
 

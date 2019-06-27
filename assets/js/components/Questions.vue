@@ -1,23 +1,16 @@
 <template>
-
     <div class="screen">
-        
-        <img class="speaker" src="../../images/speaker.svg" alt="Speaker">
-
         <p class="extrait"><img class="note" src="../../images/note.svg" alt="Note de musique">{{level.extrait}}</p>
-
         <p class="id__question">{{level.id}}<span>/3</span></p>
         <p class="ok">{{level.question}}</p>
-
         <div class="response">
-            <div class="A">{{level.reponseA}}</div>
+            <router-link to="/questions/:id/result" tag="div" class="A">{{level.reponseA}}</router-link>
             <div class="B">{{level.reponseB}}</div>
             <div class="C">{{level.reponseC}}</div>
-        </div>
-
-        <router-link class="next" :to="level.link.toString()"><p>Suivant</p></router-link>
+        </div>        
+        <router-link class="next" :to="level.link.toString()">Suivant</router-link>
+        <router-link :to="level.linkSumm"  class="next">lknev</router-link>      
     </div>
-
 </template>
 
 

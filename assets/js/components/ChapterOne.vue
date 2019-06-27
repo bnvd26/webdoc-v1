@@ -54,7 +54,7 @@
       <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <p class="intro__title item--title">Introduction</p>
+      <router-link  to="/chapterOne/1" tag="p" class="menu__title item--title" >Introduction</router-link>
     </div>
     <div class="item item__two">
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@
   </nav>
 
 
-  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1">
+  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1 && this.$route.params.id != 4 &&this.$route.params.id != 5">
   <h1 id="title" class="title">{{chapterOnep.title}}</h1>
   </div>
 <div v-if="this.$route.params.id == 0">
@@ -130,16 +130,14 @@
         </defs>
         <circle class="stroke" cx="19" cy="19" r="18.5" stroke="white"/>
         </svg>
-      <p class="element__title">Le rythme</p>
+      <p class="element__title">{{chapterOnep.content}}</p>
     </div>
     <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
   </div>
 
   <div id="tamere" class="hover hover--left hover--rythme">
     <p>
-      Le rythme détermine la durée entre les différents sons.
-      L'unité de mesure de cette durée musicale est le temps.
-      C'est une façon de compter l'espace entre chaque note.
+      {{chapterOnep.content4}}
     </p>
   </div>
   
@@ -151,13 +149,13 @@
         <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
         <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
         </svg>
-      <p class="element__title">La hauteur</p>
+      <p class="element__title">{{chapterOnep.content1}}</p>
     </div>
     <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
   </div>
 
   <div class="hover hover--right hover--hauteur">
-    <p>La hauteur d'un son pur correspond à sa fréquence de vibration, que l'on mesure en hertz (nombre de vibrations périodiques par seconde). Plus la vibration est rapide, plus le son est dit aigu ou haut; plus la vibration est lente, plus le son est dit grave ou bas.</p>
+    <p>{{chapterOnep.content6}}</p>
   </div>
 
   <div class="element element--nuance">
@@ -168,13 +166,13 @@
         <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
         <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
         </svg>
-      <p class="element__title">Les nuances</p>
+      <p class="element__title">{{chapterOnep.content2}}</p>
     </div>
     <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
   </div>
 
   <div class="hover hover--left hover--nuance">
-    <p>Une nuance est un signe noté sur une partition qui indique l'intensité relative d'une note, d'une phrase, ou encore d'un passage entier d'une œuvre musicale. Les nuances permettent au musicien de restituer la dynamique de l'œuvre lors de son interprétation.</p>
+    <p>{{chapterOnep.content5}}</p>
   </div>
 
   <div class="element element--timbre">
@@ -185,13 +183,13 @@
         <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
         <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
         </svg>
-      <p class="element__title">Le timbre</p>
+      <p class="element__title">{{chapterOnep.content3}}</p>
     </div>
     <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
   </div>
 
   <div class="hover hover--right hover--timbre">
-    <p>Le timbre désigne l'ensemble des caractéristiques sonores qui permettent d'identifier un instrument.</p>
+    <p>{{chapterOnep.content7}}</p>
   </div>
 
   <p class="explications">la musique est un <span class="darkBlue">art</span> consistant à combiner <span class="lightBlue">sons</span> et <span class="lightBlue">silences</span> au cours du temps. Les ingrédients principaux sont le <span class="darkBlue">rythme</span> , la <span class="lightBlue">hauteur</span>, les <span class="darkBlue">nuances</span> et le <span class="lightBlue">timbre</span>.</p>
@@ -369,7 +367,7 @@
    </div>
 
 <div v-if="this.$route.params.id == 4">
-  
+  <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
       <div class="hemispheres">
     <div class="hemisphere hemisphere--gauche">
       <h3 class="hemisphere__title">Écoute d'un son</h3>
@@ -490,6 +488,9 @@
       
 
 </div>
+<div v-if="this.$route.params.id == 5">
+ <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+</div>
   
  
   </div>
@@ -508,6 +509,7 @@
 </template>
 <script>
 import axios from 'axios'
+import main from '../main'
 
 
 
@@ -1643,21 +1645,7 @@ body {
   right: 2%;
 }
 
-.hover__zone {
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Gotham Book', sans-serif;
-  font-weight: normal;
-  font-style: italic;
-  background: rgba(31, 31, 31, 0.5);
-  border-radius: 10px;
-  color: #FFFFFF;
-  font-size: 14px;
-  width: 18vw;
-  padding: 10px;
-}
+
 
 .hover__zone--none {
   display: none;
@@ -1884,6 +1872,7 @@ body {
   font-size: 14px;
   width: 18vw;
   padding: 10px;
+  line-height: 1.2em;
 }
 
 .hover__zone--visible {

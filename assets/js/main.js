@@ -220,6 +220,103 @@ for(let i = 4; i < brainSvgs.length; i++) {
     altzone.classList.remove('hover__zone--visible');
   })
 }
+
+
+
+
+
+
+var stopscroll = true;
+
+setTimeout(() => {
+  stopscroll = false;
+}, 1000);
+
+var href = window.location.href
+var test = href.substring(href.length-12, href.length-1)
+console.log(test)
+var id = href[33];
+
+
+if(test === 'chapterOne/') {
+  document.addEventListener('wheel', function (event) {
+
+    if ((event.deltaY > 150) && !stopscroll) {
+      id++;
+      var url = href.substring(0, href-1) + id
+  
+      stopscroll = true;
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+    }
+  
+    else if ((event.deltaY < -150) && !stopscroll) {
+      id--;
+      var url = href.substring(0, href-1) + id
+  
+      stopscroll = true;
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+    }
+  })
+  
+  document.body.addEventListener('keydown', function (event) {
+    
+    let keycode = event.key
+    if (keycode === 'ArrowDown' && !stopscroll) {
+      id++;
+      var url = href.substring(0, href-1) + id
+  
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+      
+    }
+    else if (keycode === 'ArrowUp' && !stopscroll) {
+      id--;
+      var url = href.substring(0, href-1) + id
+  
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+    }
+  })
+}  else if (test === 'http://localhost:8001') {
+  document.body.addEventListener('keydown', function (event) {
+    
+    let keycode = event.key
+    if (keycode === 'ArrowDown' && !stopscroll) {
+      var url = 'http://localhost:8001/questions/0'
+  
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+      
+    }
+  })
+
+  document.addEventListener('wheel', function (event) {
+
+    if ((event.deltaY > 150) && !stopscroll) {
+      var url = 'http://localhost:8001/questions/0'
+  
+      stopscroll = true;
+      setTimeout(() => {
+        window.location.replace(url)
+      }, 500);
+    }
+  })
+}
+
+
+
+
+
+
+
+
   
   
 }, 0);

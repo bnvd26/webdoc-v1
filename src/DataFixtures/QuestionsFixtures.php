@@ -18,6 +18,7 @@ class QuestionsFixtures extends Fixture
             $questions->setReponseB('Joie');
             $questions->setReponseC('Énergie');
             $questions->setLink('/questions/1');
+            $questions->setLinkSumm('/summary');
             $manager->persist($questions);
 
             $questions = new Questions();
@@ -27,6 +28,7 @@ class QuestionsFixtures extends Fixture
             $questions->setReponseB('Tristesse');
             $questions->setReponseC('Mélancolie');
             $questions->setLink('/questions/2');
+            $questions->setLinkSumm('/summary');
             $manager->persist($questions);
 
             $questions = new Questions();
@@ -36,6 +38,7 @@ class QuestionsFixtures extends Fixture
             $questions->setReponseB('Joie');
             $questions->setReponseC('Énergie');
             $questions->setLink('/questions/2');
+            $questions->setLinkSumm('/summary');
             $manager->persist($questions);
 
             $manager->flush();

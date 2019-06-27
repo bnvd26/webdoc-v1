@@ -1,13 +1,8 @@
 <template>
     <div id="app">
-
-        <img class="speaker" src="../../images/speaker.svg" alt="Speaker">
-
-     
-
   <div class="menu">
     <img class="brain" src="../../images/cerveau.svg" alt="Cerveau">
-    <img id="partOne" class="part partOne" src="../../images/partOne.png" alt="Partie 1">
+    <a href="/chapterOne/0"><img id="partOne" class="part partOne" src="../../images/partOne.png" alt="Partie 1"></a>
     <img id="partTwo" class="part partTwo" src="../../images/partTwo.png" alt="Partie 2">
     <img id="partThree" class="part partThree" src="../../images/partThree.png" alt="Partie 3">
     <img id="partFour" class="part partFour" src="../../images/partFour.png" alt="Partie 4">
@@ -117,7 +112,7 @@ export default {
         font-style: italic;
     }
 
-    body {
+  body {
   background-color: #0F0F0F;
 }
 
@@ -237,7 +232,7 @@ export default {
 }
 
 .part {
-  opacity: 0;
+  opacity: .4;
   cursor: url('../../images/cursor.png') 4 12, auto;
 }
 

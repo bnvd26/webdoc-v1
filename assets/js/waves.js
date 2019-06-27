@@ -143,7 +143,7 @@ AUDIO.VISUALIZER = (function () {
      */
     Visualizer.prototype.bindEvents = function () {
         var _this = this;
-        var speaker = document.querySelector('.speaker');
+        var speaker = document.querySelector('.nospeaker');
         document.addEventListener('click', function (e) {
             if (e.target === speaker) {
                 e.stopPropagation();

@@ -38,7 +38,7 @@ export default {
 </script>
 
         
-<style>
+<style scoped>
   @font-face {
         font-family: 'Gotham';
         src: url('../../fonts/Gotham-Bold.woff2') format('woff2'),

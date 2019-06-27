@@ -10,12 +10,13 @@ import App from './components/App.vue';
 import Questions from './components/Questions.vue';
 import Summary from './components/Summary.vue';
 import ChapterOne from './components/ChapterOne.vue';
+import Result from './components/Result.vue';
 
 
 const routes = [
   { path: '/', component: Home },
   { path: '/questions/:id', component: Questions, name: 'questions'},
-  { path: '/questions/:id/result', component: Home, name: 'result'},
+  { path: '/questions/:id/result', component: Result, name: 'result'},
   { path: '/summary', component: Summary, name: 'summary'},
   { path: '/chapterOne/:id', component: ChapterOne, name: 'chapterOne'},
 
