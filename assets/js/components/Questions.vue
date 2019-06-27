@@ -7,7 +7,7 @@
         <p class="extrait"><img class="note" src="../../images/note.svg" alt="Note de musique">{{level.extrait}}</p>
 
         <p class="id__question">{{level.id}}<span>/3</span></p>
-        <p class="question">{{level.question}}</p>
+        <p class="ok">{{level.question}}</p>
 
         <div class="response">
             <div class="A">{{level.reponseA}}</div>
@@ -69,7 +69,12 @@ export default {
 </script>
 
         
-<style>
+<style scoped>
+
+
+
+
+
 @font-face {
     font-family: 'Gotham Book';
     font-style: normal;

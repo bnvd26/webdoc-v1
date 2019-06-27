@@ -2,12 +2,12 @@
     <div id="app">
 
 
-
-  
+<div v-if="this.$route.params.id == 0">
 <img class="speaker" src="../../images/speaker.svg" alt="Coupe son">
   <img id="infos" class="infos" src="../../images/infos.svg" alt="Informations Navigation">
 
-  
+ </div>
+ 
 
   <img class="brain" src="../../images/cerveau.svg" alt="">
   <div id="filter" class="filter"></div>
@@ -43,7 +43,7 @@
 
       <svg class="hovered" xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34">
         <defs>
-          
+
         </defs>
         <title>Fichier 1</title>
         <g id="Calque_2" data-name="Calque 2">
@@ -59,13 +59,12 @@
       <p class="menu__title item--title">Menu</p>
     </div>
     <!--  Sous parties  -->
-    <div class="item item__one">
+      <div class="item item__one">
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="white" style="opacity: 1;"
         xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <svg class="stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" 
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
       <p class="intro__title item--title">Introduction</p>
@@ -74,7 +73,7 @@
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <svg class="stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
       <p class="one__title item--title">Le cerveau</p>
@@ -83,7 +82,7 @@
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <svg class="stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
       <p class="two__title item--title">Les émotions</p>
@@ -92,7 +91,7 @@
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <svg class="stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
       <p class="three__title item--title">Les réactions physiologiques</p>
@@ -126,11 +125,11 @@
         </div>
       </div>
   
+
     </div>
     
   <p class="scroll">Scroll down</p>
         <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
-
 
 
     </div>
@@ -146,22 +145,17 @@ export default {
         return {
             chapterOnep: ' ',
             parts: ' ',
+            test: false,
+            sound: null
         }
     },
 
+
     watch: {
     '$route.params.id' (to, from) {
-     if($route.params.id == 0)
-     {
-          axios
-        .get('http://127.0.0.1:8001/api/chapters')
-        .then(response => (
-            this.chapterOnep = response.data[2][0],
-            this.parts = response.data[2][this.$route.params.id]
-        ))
-     }
+     
     
-   console.log($route.params.id)
+   console.log(this.$route.params.id)
      
       if(to == 1)
       {
@@ -172,7 +166,7 @@ export default {
             this.chapterOnep = response.data[1][1],
             this.parts = response.data[1][this.$route.params.id]
         ))
-      }
+      } 
       
     }
   },
@@ -181,16 +175,19 @@ export default {
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapters')
-        .then(response => (this.chapterOnep = response.data[2][this.$route.params.id]
+        .then(response => (this.chapterOnep = response.data[2][this.$route.params.id],
+        this.sound = response.data[2][this.$route.params.id].image
                            
                           
-                           ))   
-    }
+      ))   
+    },
+
+  
 }
 </script>
 
         
-<style>
+<style scoped>
   @font-face {
         font-family: 'Gotham';
         src: url('../../fonts/Gotham-Bold.woff2') format('woff2'),
@@ -239,19 +236,19 @@ export default {
         font-style: italic;
     }
 
-    body {
+  body {
         background-color: #0F0F0F;
-    }
+  }
 
-    .speaker {
+  .speaker {
         width: 2%;
         position: absolute;
         top: 2%;
         left: 2%;
-    }
+  }
 
 
-    .brain {
+  .brain {
   position: absolute;
   top: 50%;
   left: 50%;

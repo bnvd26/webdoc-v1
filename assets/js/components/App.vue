@@ -30,7 +30,7 @@ import axios from 'axios'
 </script>
 
 <style>
-
+@import url("../../css/reset.css");
 
 /* CANVAS */
 body {

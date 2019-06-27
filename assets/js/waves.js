@@ -143,9 +143,9 @@ AUDIO.VISUALIZER = (function () {
      */
     Visualizer.prototype.bindEvents = function () {
         var _this = this;
-
+        var speaker = document.querySelector('.speaker');
         document.addEventListener('click', function (e) {
-            if (e.target === _this.canvas) {
+            if (e.target === speaker) {
                 e.stopPropagation();
                 if (!_this.isPlaying) {
                     return (_this.ctx.state === 'suspended') ? _this.playSound() : _this.loadSound();
