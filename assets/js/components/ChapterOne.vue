@@ -1,15 +1,104 @@
 <template>
     <div id="app">
 
-
-<div v-if="this.$route.params.id == 0">
 <img class="speaker" src="../../images/speaker.svg" alt="Coupe son">
   <img id="infos" class="infos" src="../../images/infos.svg" alt="Informations Navigation">
-
- </div>
- 
+<div v-if="this.$route.params.id == 0">
 
   <img class="brain" src="../../images/cerveau.svg" alt="">
+    <p class="scroll">Scroll down</p>
+        <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
+</div>
+<div v-if="this.$route.params.id == 1">
+<img class="noteMusique" src="../../images/noteIntro.png" alt="Note de musique">
+
+  <div class="element element--rythme">
+    <div class="element__text">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <linearGradient id="gradient">
+          <stop offset="5%" stop-color="#4B2ABF" />
+          <stop offset="95%" stop-color="#92FCFE" />
+        </linearGradient>
+        <linearGradient id="white">
+          <stop offset="5%" stop-color="white" />
+          <stop offset="95%" stop-color="white" />
+        </linearGradient>
+        <circle class="circle" cx="18.9999" cy="19.0002" r="11.7619" fill="white" />
+        <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
+        <defs>
+          
+        </defs>
+        <circle class="stroke" cx="19" cy="19" r="18.5" stroke="white"/>
+        </svg>
+      <p class="element__title">Le rythme</p>
+    </div>
+    <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
+  </div>
+
+  <div id="tamere" class="hover hover--left hover--rythme">
+    <p>
+      Le rythme détermine la durée entre les différents sons.
+      L'unité de mesure de cette durée musicale est le temps.
+      C'est une façon de compter l'espace entre chaque note.
+    </p>
+  </div>
+  
+  <div class="element element--hauteur">
+    <div class="element__text">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#gradient" />
+        <circle class="circle" cx="18.9999" cy="19.0002" r="11.7619" fill="white"/>
+        <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
+        <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
+        </svg>
+      <p class="element__title">La hauteur</p>
+    </div>
+    <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
+  </div>
+
+  <div class="hover hover--right hover--hauteur">
+    <p>La hauteur d'un son pur correspond à sa fréquence de vibration, que l'on mesure en hertz (nombre de vibrations périodiques par seconde). Plus la vibration est rapide, plus le son est dit aigu ou haut; plus la vibration est lente, plus le son est dit grave ou bas.</p>
+  </div>
+
+  <div class="element element--nuance">
+    <div class="element__text">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#gradient" />
+        <circle class="circle" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"/>
+        <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
+        <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
+        </svg>
+      <p class="element__title">Les nuances</p>
+    </div>
+    <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
+  </div>
+
+  <div class="hover hover--left hover--nuance">
+    <p>Une nuance est un signe noté sur une partition qui indique l'intensité relative d'une note, d'une phrase, ou encore d'un passage entier d'une œuvre musicale. Les nuances permettent au musicien de restituer la dynamique de l'œuvre lors de son interprétation.</p>
+  </div>
+
+  <div class="element element--timbre">
+    <div class="element__text">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#gradient" />
+        <circle class="circle" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"/>
+        <circle class="circleH" cx="18.9999" cy="19.0002" r="11.7619" fill="url(#gradient)" />
+        <circle class="stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"/>
+        </svg>
+      <p class="element__title">Le timbre</p>
+    </div>
+    <img class="line--deco" src="../../images/lineDeco.svg" alt="Decoration">
+  </div>
+
+  <div class="hover hover--right hover--timbre">
+    <p>Le timbre désigne l'ensemble des caractéristiques sonores qui permettent d'identifier un instrument.</p>
+  </div>
+
+  <p class="explications">la musique est un <span class="darkBlue">art</span> consistant à combiner <span class="lightBlue">sons</span> et <span class="lightBlue">silences</span> au cours du temps. Les ingrédients principaux sont le <span class="darkBlue">rythme</span> , la <span class="lightBlue">hauteur</span>, les <span class="darkBlue">nuances</span> et le <span class="lightBlue">timbre</span>.</p>
+
+
+</div>
   <div id="filter" class="filter"></div>
 
   <h1 id="title" class="title">{{chapterOnep.title}}</h1>
@@ -110,28 +199,6 @@
     </div>
     <!--  Fin de la NavBar  -->
   </nav>
-
-  <div id="popup" class="infos__popup">
-    <h2 class="popup__title">Indications :</h2>
-
-    <div class="popup__content">
-      <div class="popup__scroll">
-        <img class="scrollGif" src="../../images/Scroll .gif" alt="Scroll">
-        <p class="popup__explain">Scroller pour faire défiler le texte et naviguer entre les pages</p>
-      </div>
-      <div class="popup__hover">
-        <img class="hoverIcon" src="../../images/hover.svg" alt="Hover">
-        <p class="popup__explain">Survolez ces zones avec votre souris</p>
-        </div>
-      </div>
-  
-
-    </div>
-    
-  <p class="scroll">Scroll down</p>
-        <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
-
-
     </div>
     
 </template>
@@ -548,7 +615,583 @@ a {
   }
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px sans-serif;
+  margin: 0;
+  background-color: white;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.hovered {
+  fill: white;
+}
+
+body {
+  background-color: #0f0f0f;
+}
+
+.speaker {
+  width: 2%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+.title {
+  font-family: "Gotham";
+  font-weight: bold;
+  font-size: 100px;
+  letter-spacing: 36px;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(left, #4b2abf, #92fcfe);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  color: #0f0f0f;
+  text-align: center;
+}
+
+.content {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  font-family: "Gotham";
+  font-weight: 500;
+  font-style: italic;
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.music {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: italic;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: move 1s infinite alternate-reverse;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.vz-wrapper {
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  top: 20%;
+  cursor: pointer;
+}
+
+.vz-wrapper.-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: initial;
+  width: initial;
+  background: transparent;
+  box-shadow: none;
+}
+
+
+body {
+  background-color: #0F0F0F;
+  overflow: hidden;
+}
+
+.lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.4);
+  z-index: 0;
+}
+
+.speaker {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 2.5%;
+}
+
+.infos {
+  position: absolute;
+  top: 8%;
+  left: 2%;
+  width: 2.5%;
+}
+
+/*    POPUP   */
+
+.infos__popup {
+  display: none;
+}
+
+.clicked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 45vw;
+  height: 40vh;
+  background-color: rgba(31, 31, 31, 0.7);
+  border: 1px solid #92FCFE;
+  border-radius: 10px;
+}
+
+.popup__title {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-align: center;
+  transform: translateY(-100%);
+}
+
+#popup {
+  z-index: 50;
+}
+
+.popup__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 50%;
+}
+
+.popup__scroll, .popup__hover {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 45%;
+  font-family: 'Gotham Book';
+  font-size: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.scrollGif {
+  width: 30%;
+}
+
+.hoverIcon {
+  width: 10%;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 61px;
+  letter-spacing: 0.05em;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #92FCFE;
+  text-shadow: 0px 0px 5px #FFFFFF;
+  width: 75vw;
+  z-index: 0;
+}
+
+/*    NAVBAR    */
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5%;
+  background-color: rgba(196, 196, 196, 0.2);
+}
+
+.menu, .next__chapter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  border-bottom: 1px solid #FFFFFF;
+  transition: all 0.5s;
+  z-index: 3;
+}
+
+.item svg {
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.center {
+  fill: white;
+  opacity: 0;
+}
+
+.div--hover {
+  background: #4B2ABF;
+}
+
+.circle--hover {
+  opacity: 1;
+}
+
+.stroke--hover {
+  transform: scale(1.3);
+}
+
+.next__chapter {
+  border-bottom: none;
+}
+
+.item--title {
+  color: white;
+  font-size: 1.2em;
+  width: auto;
+  opacity: 0;
+  transition: all 0.5s;
+  text-align: center;
+  font-family: 'gotham';
+}
+
+.visible {
+  font-family: 'Gotham', sans-serif;
+  color: #92FCFE;
+  font-size: 30px;
+  transform: translateX(-10vw);
+  opacity: 1;
+}
+
+.menu svg {
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.menu {
+  transition: all 0.5s;
+}
+
+.basis {
+  opacity: 1;
+}
+
+.hovered {
+  opacity: 0;
+  transform: translate(1px, 1px) scale(1.1)
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.first--arrow {
+  transition: all 0.5s;
+}
+
+.second--arrow {
+  transition: all 0.5s;
+}
+
+.second {
+  animation: second 2s infinite alternate ease-in-out;
+}
+
+.first {
+  animation: first 2s infinite alternate ease-in-out;
+}
+
+@keyframes second {
+  to {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes first {
+  to {
+    transform: translateX(25px);
+    opacity: 0;
+  }
+}
+
+/*    STYLE PAGE    */
+
+.title__introduction {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.noteMusique {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+} 
+
+.element {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 14vw;
+  height: 8vh;
+}
+
+.element__title {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 22px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: right;
+  width: 15vw;
+}
+
+.element__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.element__circle {
+  width: 20%;
+}
+
+.line--deco {
+  width: 30%;
+}
+
+.element--rythme {
+  position: absolute;
+  top: 24%;
+  left: 28%;
+}
+
+.element--hauteur {
+  position: absolute;
+  top: 32%;
+  right: 22%;
+}
+
+.element--nuance {
+  position: absolute;
+  bottom: 35%;
+  left: 23%;
+}
+
+.element--timbre {
+  position: absolute;
+  bottom: 33%;
+  right: 31%;
+}
+
+.explications {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  width: 60vw;
+  height: auto;
+}
+
+
+
+.darkBlue {
+  color: #4B2ABF;
+}
+
+.lightBlue {
+  color: #92FCFE;
+}
+
+.hover {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  background: rgba(31, 31, 31, 0.5);
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 16px;
+  width: 25vw;
+  line-height: 1.2em;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.hover--right {
+  top: 43%;
+  left: 62%;
+}
+
+.stroke {
+  transition: all 0.5s;
+  transform: scale(0.6);
+  transform-origin: center;
+}
+
+.circle {
+  opacity: 1;
+  transition: all 0.5s;
+  fill: url(#white);
+}
+
+.opacity {
+  opacity: 1;
+}
+
+.circleH {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.circle--intro-ishover {
+  opacity: 1;
+}
+
+.stroke--intro-ishover {
+  transform: scale(0.8);
+  stroke: url(#gradient);
+}
+
+
+
+@keyframes move {
+  from {
+    bottom: 5%;
+  }
+
+  to {
+    bottom: 2%;
+  }
+}
     
 
 
