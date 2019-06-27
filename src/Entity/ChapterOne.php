@@ -70,7 +70,7 @@ class ChapterOne
     private $updated;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=400, nullable=true)
      */
     private $content1;
 
@@ -90,12 +90,12 @@ class ChapterOne
     private $content4;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=400, nullable=true)
      */
     private $content5;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=400, nullable=true)
      */
     private $content6;
 
@@ -103,6 +103,51 @@ class ChapterOne
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $content7;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content8;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content9;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content10;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content11;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content12;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content13;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content14;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content15;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content16;
 
 
 
@@ -334,6 +379,114 @@ class ChapterOne
     public function setContent7(?string $content7): self
     {
         $this->content7 = $content7;
+
+        return $this;
+    }
+
+    public function getContent8(): ?string
+    {
+        return $this->content8;
+    }
+
+    public function setContent8(?string $content8): self
+    {
+        $this->content8 = $content8;
+
+        return $this;
+    }
+
+    public function getContent9(): ?string
+    {
+        return $this->content9;
+    }
+
+    public function setContent9(?string $content9): self
+    {
+        $this->content9 = $content9;
+
+        return $this;
+    }
+
+    public function getContent10(): ?string
+    {
+        return $this->content10;
+    }
+
+    public function setContent10(?string $content10): self
+    {
+        $this->content10 = $content10;
+
+        return $this;
+    }
+
+    public function getContent11(): ?string
+    {
+        return $this->content11;
+    }
+
+    public function setContent11(?string $content11): self
+    {
+        $this->content11 = $content11;
+
+        return $this;
+    }
+
+    public function getContent12(): ?string
+    {
+        return $this->content12;
+    }
+
+    public function setContent12(?string $content12): self
+    {
+        $this->content12 = $content12;
+
+        return $this;
+    }
+
+    public function getContent13(): ?string
+    {
+        return $this->content13;
+    }
+
+    public function setContent13(?string $content13): self
+    {
+        $this->content13 = $content13;
+
+        return $this;
+    }
+
+    public function getContent14(): ?string
+    {
+        return $this->content14;
+    }
+
+    public function setContent14(?string $content14): self
+    {
+        $this->content14 = $content14;
+
+        return $this;
+    }
+
+    public function getContent15(): ?string
+    {
+        return $this->content15;
+    }
+
+    public function setContent15(?string $content15): self
+    {
+        $this->content15 = $content15;
+
+        return $this;
+    }
+
+    public function getContent16(): ?string
+    {
+        return $this->content16;
+    }
+
+    public function setContent16(?string $content16): self
+    {
+        $this->content16 = $content16;
 
         return $this;
     }

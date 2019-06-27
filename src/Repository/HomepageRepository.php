@@ -63,7 +63,7 @@ class HomepageRepository extends ServiceEntityRepository
     public function transformAll()
     {
         $homepage= $this->findAll();
-        $homepageTwoArray = [];
+        $homepageArray = [];
 
         foreach ($homepage as $content) {
             $homepageArray[] = $this->transform($content);

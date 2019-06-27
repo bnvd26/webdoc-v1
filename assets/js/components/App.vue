@@ -6,7 +6,10 @@
         <div class="vz-wrapper -canvas">
         <canvas id="myCanvas" width="1920" height="800"></canvas>
         </div>
+
     </div>
+            <img class="speaker" src="../../images/speaker.svg" alt="Coupe son">
+        <img id="infos" class="infos" src="../../images/infos.svg" alt="Informations Navigation">
     <router-view :key="$route.fullPath"/>
     </div>
 </template>
@@ -52,5 +55,20 @@ body {
         width: initial;
     }
 
+
+.infos {
+  position: absolute;
+  top: 8%;
+  left: 2%;
+  width: 2.5%;
+}
+
+
+.speaker {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 2.5%;
+}
     
 </style>
