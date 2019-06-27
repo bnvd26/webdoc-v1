@@ -99,11 +99,9 @@
   </nav>
 
 
-  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1 && this.$route.params.id != 4 &&this.$route.params.id != 5 && this.$route.params.id != 6 && this.$route.params.id != 8 && this.$route.params.id != 9 && this.$route.params.id != 10 && this.$route.params.id != 11">
-  <h1 id="title" class="title">{{chapterOnep.title}}</h1>
-  </div>
-<div v-if="this.$route.params.id == 0">
 
+<div v-if="this.$route.params.id == 0">
+  <h1 id="title" class="title">{{chapterOnep.title}}</h1>
   <img class="brain" src="../../images/cerveau.svg" alt="">
     <p class="scroll">Scroll down</p>
         <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
@@ -198,7 +196,7 @@
 
 </div>
 <div v-if="this.$route.params.id == 2">
-    <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+    <h1 id="title" class="title">{{chapterOnep.title}}</h1>
 </div>
 
 
@@ -754,6 +752,10 @@
     </div>
   </div>
   </div>
+
+  <div v-if="this.$route.params.id == 7">
+    <h1 id="title" class="title">{{chapterOnep.title}}</h1>
+</div>
  
 
 <div v-if="this.$route.params.id == 8">
@@ -803,64 +805,167 @@
   </div>
 </div>
 
-<div v-if="this.$route.params.id == 11">
-   
-<div
-      style="display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 65vw;"
-    >
-     <h1 id="title" class="title">{{chapterOnep.title}}</h1>
-      <p style="font-family: 'Gotham', sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: left;
-  padding: 10px;">
-        La dopamine est donc un
-        <span class="darkBlue">neurotransmetteur</span> important pour la gestion
-      </p>
-      <p>des émotions selon sa concentration dans le cerveau.</p>
-      <p>La quantité de dopamine produite et donc ses effets, varient d’une</p>
-      <p>personne à une autre.</p>
-      <p>ainsi, nos quantités de dopamine produites à l’écoute de musique</p>
-      <p>
-        influencent
-        <span class="darkBlue">nos émotions</span> de manières singulières.
-      </p>
-    </div>
+<div v-if="this.$route.params.id == 11" style="margin:100px;margin: 250px;height: 400px;display: flex;flex-direction: column;justify-content: space-between;line-height:30px;">
+  
+    
 
-    <div style="display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70vw;">
-      <p style="font-family: 'Gotham', sans-serif;
+      <h1 id="title" style="font-family: 'Gotham', sans-serif;
   font-weight: bold;
   font-style: normal;
   font-size: 24px;
-  color: #92fcfe;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;">mais alors en quoi sommes nous égaux dans certaines de nos réactions face à la musique ?</p>
-    </div>
+  color: #FFFFFF;text-align:center;">{{chapterOnep.title}}</h1>
+  <div>
+      <p style="font-family:'Gotham', sans-serif; font-weight:bold;font-style:normal;font-size:18px;color: #FFF;text-transform: uppercase">{{chapterOnep.content}}</p><br>
+      <p style="font-family:'Gotham', sans-serif; font-weight:bold;font-style:normal;font-size:18px;color: #FFF;text-transform: uppercase">{{chapterOnep.content1}}</p><br>
+      <p style="font-family:'Gotham', sans-serif; font-weight:bold;font-style:normal;font-size:18px;color: #FFF;text-transform: uppercase">{{chapterOnep.content1}}</p>
+   </div>
+ 
 
 </div>
 
+
+<div v-if="this.$route.params.id == 12" style="margin:100px;margin: 250px;height: 400px;display: flex;flex-direction: column;justify-content: space-between;line-height:30px;">
+  
+    
+
+      <h1 id="title" style="font-family: 'Gotham', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 64px;
+  text-transform: uppercase;
+  color: #FFFFFF;text-align:center;-webkit-text-stroke-color:#92FCFE;text-shadow: 0px 0px 5px #FFFFFF;-webkit-text-stroke-width: 2px;line-height:100px;">{{chapterOnep.title}}</h1>
+
+ 
+
+</div>
+
+
+<div v-if="this.$route.params.id == 13" >
+  
+    
+
+      <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+      <img class="gif--border" src="../../images/stroke.svg" alt="Bordure">
+  <img class="gif--file" src="../../images/rythme.gif" alt="Rythme">
+
+
+  <div style="position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 5px;">
+    <p>Le rythme est l’une des composantes les plus importantes dans notre <span class="lightBlue">réaction</span></p>
+    <p>face à la musique. son influence a été testée aussi bien chez les foetus, les</p>
+    <p>malades atteins de parkinson que dans la pratique du sport. C’est avec ce dernier</p>
+    <p>exemple que nous allons vous montrer son impact sur notre comportement.</p>
   </div>
+
+ 
+
+</div>
+<div v-if="this.$route.params.id == 14" >
+  
+    
+
+      <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+<h2 style="position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #92FCFE;">Une expérience généralisée face à la musique</h2>
+ <img class="illustration" src="../../images/image.png" alt="Illustration">
+
+  <div style="position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 5px;">
+    <p>le rythme de la musique influence notre corps. En effet, celui-ci cause un effet</p>
+    <p>de stimulation du <span class="lightBlue">système nerveux sympathique.</span></p>
+  </div>
+
+  <div class="explications--none">
+    <p>Ce système controle une grande partie des activités inconscientes du corps</p>
+    <p>humain comme le <span class="darkBlue">rythme cardiaque</span> ou la <span class="lightBlue">pression artérielle.</span></p>
+  </div>
+
+ 
+
+</div>
+
+<div v-if="this.$route.params.id == 15">
+<h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+<h2 style="position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Gotham Book', sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #92FCFE;">Une expérience généralisée face à la musique</h2>
+  <div class="illustrations__title">
+    <h3 class="illustration__title">Rythme du coeur<br>à l’écoute d’une musique lente</h3>
+  </div>
+
+  <img class="human__left" src="../../images/human.png" alt="Corps humain">
+  <img class="heart__left" src="../../images/heart.png" alt="Coeur humain">
+
+
+  <div style="position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 5px;">
+    <p>Une musique avec un rythme plutôt <span class="darkBlue">lent</span> a comme effets de <span class="lightBlue">ralentir</span> le rythme</p>
+    <p>cardiaque et <span class="lightBlue">diminuer</span> la pression artérielle de façon proportionnelle</p>
+    <p>et ainsi calme et apaise.</p>
+  </div>
+
+  <div class="explications--none">
+    <p>A l’inverse, une musique avec un rythme plutôt <span class="purple">rapide</span> a comme effets d’<span class="pink">accélérer</span></p>
+    <p>le rythme cardiaque et <span class="pink">augmenter</span> la pression artérielle de</p>
+    <p>façon proportionnelle et ainsi provoque un etat de stress ou d’excitation.</p>
+  </div>
+</div>
+
+    </div>
+
+
 
 
 
@@ -894,24 +999,31 @@ export default {
     },
 
 
-    watch: {
-    '$route.params.id' (to, from) {
-     
     
 
-      console.log('test')
+    watch: {
+      '$route.params.id' (to, from) {
+      setTimeout(() => {
+         if(from == 11)
+     {
+        console.log(from)
+     }
+      
     
      
   
       
-    }
-  },
+    
+      }, 0);
+    
+    
+  }}}
 
   
     
 
   
-}
+
 </script>
 
         
@@ -1046,6 +1158,17 @@ a {
   display: none;
 }
 
+.gif--border, .gif--file {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gif--file {
+  width: 60%;
+}
+
 .clicked {
   position: absolute;
   top: 50%;
@@ -1062,6 +1185,13 @@ a {
   border-radius: 10px;
 }
 
+.illustration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .popup__title {
   font-family: 'Gotham', sans-serif;
   font-weight: bold;
@@ -1072,6 +1202,8 @@ a {
   text-align: center;
   transform: translateY(-100%);
 }
+
+
 
 .popup__content {
   display: flex;
@@ -1148,6 +1280,66 @@ a {
   border-bottom: 1px solid #FFFFFF;
   transition: all 0.5s;
   z-index: 3;
+}
+
+.illustrations__title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+}
+
+.illustration__title {
+  font-family: 'Gotham', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  width: 80%;
+  text-align: center;
+}
+
+.human__left {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+}
+
+.heart__left {
+  position: absolute;
+  top: 26.8%;
+  left: 35%;
+
+  width: 30%;
+  animation: pulse 1s infinite alternate;
+}
+
+
+@keyframes pulse {
+  from {
+    /* position: absolute;
+    top: 28%;
+    left: 15%;
+    transform: translate(-50%, -50%); */
+    transform: scale(1);
+  }
+
+  to {
+    /* position: absolute;
+    top: 28%;
+    left: 15%;
+    transform: translate(-50%, -50%); */
+    transform: scale(1.1);
+  }
 }
 
 .item svg {

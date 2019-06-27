@@ -65,10 +65,10 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent11("L’air de Wernicke analyse la comparaison des hauteurs des notes.");
         $chapterOne->setContent12("Cortex auditif");
         $chapterOne->setContent13("Les mélodies et les structures musicales complexes sont analysées par le cortex auditif situé dans le lobe temporal.");
-        $chapterOne->setContent14("le son n’est pas seulement traité par le <span>cortex auditif</span>,");
-        $chapterOne->setContent15("situé dans <span>le lobe temporal</span>, mais par tout le cerveau.");
-        $chapterOne->setContent16("Découvrez quelle partie de votre cerveau est <span >activée</span>");
-        $chapterOne->setMusic("par les différentes <span>composantes de la musique</span>.");
+        $chapterOne->setContent14("le son n’est pas seulement traité par le cortex auditif,");
+        $chapterOne->setContent15("situé dans le lobe temporal, mais par tout le cerveau.");
+        $chapterOne->setContent16("Découvrez quelle partie de votre cerveau est activée");
+        $chapterOne->setMusic("par les différentes composantes de la musique.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -87,7 +87,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent7("Air de Wernicke");
         $chapterOne->setContent8("Cortex temporal");
         $chapterOne->setContent9("Ecouter et traiter les structures d’une musique impliquent des régions qui participent au langage, telles que les aires de Broca et de Wernicke, ainsi que d’autres régions du cortex temporal.");
-        $chapterOne->setMusic("Les zones activées dépendent du <span class='darkBlue'>type de son</span> : un bruit ou une musique.");
+        $chapterOne->setMusic("Les zones activées dépendent du type de son: un bruit ou une musique.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -104,7 +104,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent6("Cortex Frontal");
         $chapterOne->setContent7("Cortex Temporal");
         $chapterOne->setContent8("En chantant par exemple, on met en jeu certaines régions situées dans les cortex frontal et temporal.");
-        $chapterOne->setMusic("Ces Zones dépendent aussi du niveau de <span class='lightBlue'>maîtrise du son</span> : musique familère ou invention.");
+        $chapterOne->setMusic("Ces Zones dépendent aussi du niveau de maîtrise du son : musique familère ou invention.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -122,7 +122,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent7("Cortex orbitofrontal");
         $chapterOne->setContent8("Amygdale cérébrale");
         $chapterOne->setContent9("Les émotions ressenties à l’écoute musicale activent les structures participant aux émotions comme l’amygdale cérébrale et le cortex orbitofrontal.");
-        $chapterOne->setMusic("En stimulant certaines zones de votre cerveau, la musique est capable de vous faire <span class='darkBlue'>réagir</span> aussi bien physiquement qu’émotionnellement.");
+        $chapterOne->setMusic("En stimulant certaines zones de votre cerveau, la musique est capable de vous faire réagir aussi bien physiquement qu’émotionnellement.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -139,7 +139,7 @@ class ChapterOneFixtures extends Fixture
 
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("3 - Comment sont provoquées ces émotions ?");
-        $chapterOne->setContent("Maintenant vous savez comment est traitée <span class='darkBlue'>la musique</span> par le cerveau. à présent voyons comment celle-ci arrive à influencer vos émotions.");
+        $chapterOne->setContent("Maintenant vous savez comment est traitée la musique par le cerveau. à présent voyons comment celle-ci arrive à influencer vos émotions.");
         $chapterOne->setMusic('h');
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
@@ -149,7 +149,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("3 - Comment sont provoquées ces émotions ?");
         $chapterOne->setContent("Une expérience singulière face à la musique");
-        $chapterOne->setMusic('Vos émotions ont une origine biochimique au niveau du cerveau, notamment Grâce à un neurotransmetteur appelé la <span class="lightBlue">dopamine</span>, qui aura une influence singulière sur vous (propre à chaque individu).');
+        $chapterOne->setMusic('Vos émotions ont une origine biochimique au niveau du cerveau, notamment Grâce à un neurotransmetteur appelé la dopamine, qui aura une influence singulière sur vous (propre à chaque individu).');
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -157,9 +157,9 @@ class ChapterOneFixtures extends Fixture
 
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("3 - Comment sont provoquées ces émotions ?");
-        $chapterOne->setContent("La dopamine est un <span class='darkBlue'>neurotransmetteur</span> qui transmet l’information entre les neurones.");
-        $chapterOne->setContent1("Lorsque le circuit de la récompense est activé, les neurones libèrent de la dopamine. celle-ci permet non seulement au cerveau  de procurer une sensation de <span class='darkBlue'>plaisir</span> immédiate, mais aussi de mémoriser <span class='lightBlue'>les expériences agréables.</span>");
-        $chapterOne->setMusic('Lorsque la production ou la circulation de la dopamine est <span class="pink">interrompue</span> ou <span class="darkBlue">entravée</span>, la communication des cellules nerveuses ne se déroule pas comme prévu et cela peut entraîner la dépression.');
+        $chapterOne->setContent("La dopamine est un neurotransmetteur qui transmet l’information entre les neurones.");
+        $chapterOne->setContent1("Lorsque le circuit de la récompense est activé, les neurones libèrent de la dopamine. celle-ci permet non seulement au cerveau  de procurer une sensation de plaisir immédiate, mais aussi de mémoriser les expériences agréables.");
+        $chapterOne->setMusic('Lorsque la production ou la circulation de la dopamine est interrompue ou , la communication des cellules nerveuses ne se déroule pas comme prévu et cela peut entraîner la dépression.');
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -167,8 +167,8 @@ class ChapterOneFixtures extends Fixture
 
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("3 - Comment sont provoquées ces émotions ?");
-        $chapterOne->setContent("La dopamine est donc un <span class='darkBlue'>neurotransmetteur</span> important pour la gestion des émotions selon sa concentration dans le cerveau. La quantité de dopamine produite et donc ses effets, varient d’une personne à une autre.");
-        $chapterOne->setContent1("ainsi, la quantité de dopamine produite à l’écoute de musique influencent <span class='darkBlue'>nos émotions</span> de manière singulière.");
+        $chapterOne->setContent("La dopamine est donc un neurotransmetteur important pour la gestion des émotions selon sa concentration dans le cerveau. La quantité de dopamine produite et donc ses effets, varient d’une personne à une autre.");
+        $chapterOne->setContent1("ainsi, la quantité de dopamine produite à l’écoute de musique influencent nos émotions de manière singulière.");
         $chapterOne->setMusic('mais alors en quoi sommes nous égaux dans certaines de nos réactions face à la musique ?');
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
@@ -187,7 +187,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("4 - Comment sont provoqués nos reactions ?");
         $chapterOne->setContent("Une expérience généralisée face à la musique");
-        $chapterOne->setContent1("Le <span class='lightBlue'>rythme</span> est l’une des composantes les plus importantes dans notre <span class='lightBlue'>réaction</span> face à la musique. son <span class='darkBlue'>influence</span> a été testée aussi bien chez les foetus, les malades atteins de parkinson que dans la pratique du sport. C’est avec ce dernier exemple que nous allons vous montrer son impact sur notre comportement.");
+        $chapterOne->setContent1("Le rythme est l’une des composantes les plus importantes dans notre réaction face à la musique. son influence a été testée aussi bien chez les foetus, les malades atteins de parkinson que dans la pratique du sport. C’est avec ce dernier exemple que nous allons vous montrer son impact sur notre comportement.");
         $chapterOne->setMusic("h");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
@@ -197,8 +197,8 @@ class ChapterOneFixtures extends Fixture
         $chapterOne = new ChapterOne();
         $chapterOne->setTitle("4 - Comment sont provoqués nos reactions ?");
         $chapterOne->setContent("Une expérience généralisée face à la musique");
-        $chapterOne->setContent1("le rythme de la musique influence notre corps. En effet, celui-ci cause un effet de stimulation du <span class='lightBlue'>système nerveux sympathique.</span>");
-        $chapterOne->setMusic("Ce système contrôle une grande partie des activités inconscientes du corps humain comme le <span class='darkBlue'>rythme cardiaque</span> ou <span class='lightBlue'>la pression artérielle.</span>");
+        $chapterOne->setContent1("le rythme de la musique influence notre corps. En effet, celui-ci cause un effet de stimulation du système nerveux sympathique.");
+        $chapterOne->setMusic("Ce système contrôle une grande partie des activités inconscientes du corps humain comme le rythme cardiaque ou la pression artérielle.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -209,7 +209,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent("Une expérience généralisée face à la musique");
         $chapterOne->setContent1("Rythme du coeur à l’écoute d’une musique lente");
         $chapterOne->setContent2("Rythme du coeur sans musique");
-        $chapterOne->setMusic("Une musique avec un rythme plutôt <span class='darkBlue'>lent</span> a pour effets de <span class='ligthBlue'>ralentir</span> le rythme cardiaque et <span class='ligthBlue'>diminuer</span> la pression artérielle de façon proportionnelle et ainsi calme et apaise.");
+        $chapterOne->setMusic("Une musique avec un rythme plutôt lent a pour effets de ralentir le rythme cardiaque et diminuer la pression artérielle de façon proportionnelle et ainsi calme et apaise.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
@@ -220,7 +220,7 @@ class ChapterOneFixtures extends Fixture
         $chapterOne->setContent("Une expérience généralisée face à la musique");
         $chapterOne->setContent1("Rythme du coeur à l’écoute d’une musique rapide");
         $chapterOne->setContent2("Rythme du coeur sans musique");
-        $chapterOne->setMusic("à l’inverse, une musique avec un rythme plutôt <span class='purple'>rapide</span> a pour effets d’<span class='pink'>accélérer</span> le rythme cardiaque et <span class='pink'>augmenter</span> la pression artérielle de façon proportionnelle et ainsi provoque un etat de stress ou d’excitation.");
+        $chapterOne->setMusic("à l’inverse, une musique avec un rythme plutôt rapide a pour effets d’accélérer le rythme cardiaque et augmenter la pression artérielle de façon proportionnelle et ainsi provoque un etat de stress ou d’excitation.");
         $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
         $chapterOne->setFilename('/public/images/bla');
         $chapterOne->setUpdated((new \DateTime()));
