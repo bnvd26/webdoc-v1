@@ -173,6 +173,53 @@ if(partThree)
       hover.classList.remove('opacity')
     })
   }
+
+
+  // Brain
+var brainCircles = document.querySelectorAll('.brain--center');
+var brainStrokes = document.querySelectorAll('.brain--stroke')
+var brainSvgs = document.querySelectorAll('.circle')
+var brainHiddens = document.querySelectorAll('.brain--hidden');
+var zones = document.querySelectorAll('.zone');
+var altZones = document.querySelectorAll('.hover__zone')
+
+for(let i = 0; i < brainSvgs.length; i++) {
+  let brainSvg = brainSvgs[i]
+  let brainCircle = brainCircles[i];
+  let brainStroke = brainStrokes[i];
+  let brainHidden = brainHiddens[i];
+  let zone = zones[i];
+
+
+  brainSvg.addEventListener('mouseover', function() {
+    brainCircle.classList.add('circle--hovered');
+    brainStroke.classList.add('stroke--hovered');
+    brainHidden.classList.add('brain--opacity');
+    zone.classList.add('zone--visible');
+
+  })
+
+  brainSvg.addEventListener('mouseout', function() {
+    brainCircle.classList.remove('circle--hovered');
+    brainStroke.classList.remove('stroke--hovered');
+    brainHidden.classList.remove('brain--opacity');
+    zone.classList.remove('zone--visible');
+
+  })
+}
+
+for(let i = 4; i < brainSvgs.length; i++) {
+  let brainSvg = brainSvgs[i]
+  let altzone = altZones[i-4]
+
+  brainSvg.addEventListener('mouseover', function() { 
+    altzone.classList.add('hover__zone--visible')
+  })
+
+  brainSvg.addEventListener('mouseout', function() { 
+    altzone.classList.remove('hover__zone--visible');
+  })
+}
   
   
 }, 0);

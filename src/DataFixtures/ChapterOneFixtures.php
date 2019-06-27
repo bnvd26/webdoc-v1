@@ -19,6 +19,7 @@ class ChapterOneFixtures extends Fixture
             $chapterOne->setMusic('Pour une meilleure expérience, montez le son ou mettez votre casque');
             $chapterOne->setImageBackground('http://localhost:8000/test2.mp3');
             $chapterOne->setFilename('/public/images/bla');
+            $chapterOne->setContent2('/public/images/bla');
             $chapterOne->setUpdated((new \DateTime()));
             $manager->persist($chapterOne);
 

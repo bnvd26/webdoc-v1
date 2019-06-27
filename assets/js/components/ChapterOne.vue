@@ -3,6 +3,10 @@
 
 <img class="speaker" src="../../images/speaker.svg" alt="Coupe son">
   <img id="infos" class="infos" src="../../images/infos.svg" alt="Informations Navigation">
+
+  <div v-if="this.$route.params.id != 3 && this.$route.params.id != 1">
+  <h1 id="title" class="title">{{chapterOnep.title}}</h1>
+  </div>
 <div v-if="this.$route.params.id == 0">
 
   <img class="brain" src="../../images/cerveau.svg" alt="">
@@ -10,6 +14,7 @@
         <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
 </div>
 <div v-if="this.$route.params.id == 1">
+  <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
 <img class="noteMusique" src="../../images/noteIntro.png" alt="Note de musique">
 
   <div class="element element--rythme">
@@ -101,63 +106,167 @@
 </div>
 
 <div v-if="this.$route.params.id == 3">
- <div class="hemispheres">
-    <div class="hemisphere hemisphere--gauche">
-      <h3 class="hemisphere__title">Hémisphère Gauche</h3>
-      <img class="hemisphere__picture" src="../../images/hemisphereGauche.png" alt="Hémisphère Gauche">
+  <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
+     <div class="hemispheres">
+      <div class="hemisphere hemisphere--gauche">
+        <h3 class="hemisphere__title">Hémisphère Gauche</h3>
+        <img
+          class="hemisphere__picture"
+          src="../../images/hemisphereGauche.png"
+          alt="Hémisphère Gauche"
+        >
+      </div>
+
+      <svg
+        class="circle circle--one"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <div class="zone zone--one">Lobe frontal</div>
+      <svg
+        class="circle circle--two"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4B2ABF"></stop>
+            <stop offset="100%" stop-color="#92FCFE"></stop>
+          </linearGradient>
+        </defs>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <div class="zone zone--two">Lobe pariétal</div>
+      <svg
+        class="circle circle--three"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <div class="zone zone--three">Lobe temporal</div>
+      <svg
+        class="circle circle--four"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <div class="zone zone--four">Cervelet</div>
+
+      <div class="hemisphere hemisphere--droit">
+        <h3 class="hemisphere__title">Hémisphère Droit</h3>
+        <img
+          class="hemisphere__picture"
+          src="../../images/hemisphereDroit.png"
+          alt="Hémisphère Droit"
+        >
+      </div>
+
+      <svg
+        class="circle circle--five"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <!--  Appartition au hover du cercle 5  -->
+      <div class="zone zone--five">Air de Broca</div>
+      <div class="hover__zone">L’air de Broca analyse les mélodies.</div>
+
+      <svg
+        class="circle circle--six"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <!--  Appartition au hover du cercle 6  -->
+      <div class="zone zone--six">Air de Wernicke</div>
+      <div class="hover__zone">L’air de Wernicke analyse la comparaison des hauteurs des notes.</div>
+
+      <svg
+        class="circle circle--seven"
+        width="38"
+        height="38"
+        viewBox="0 0 38 38"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use xlink:href="#gradient" x="120" y="60"></use>
+        <circle class="brain--center" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--hidden" cx="18.9999" cy="19.0002" r="11.7619" fill="#F2F2F2"></circle>
+        <circle class="brain--stroke" cx="19" cy="19" r="18.5" stroke="#F2F2F2"></circle>
+      </svg>
+      <!--  Appartition au hover du cercle 7  -->
+      <div class="zone zone--seven">Cortex auditif</div>
+      <div
+        class="hover__zone"
+      >Les mélodies et les structures musicales complexes sont analysées par le cortex auditif situé dans le lobe temporal.</div>
     </div>
 
-    <img class="circle circle--one" src="../../images/circle.svg" alt="Circle">
-    <div class="zone zone--one">Lobe frontal</div>
-    <img class="circle circle--two" src="../../images/circle.svg" alt="Circle">
-    <div class="zone zone--two">Lobe pariétal</div>
-    <img class="circle circle--three" src="../../images/circle.svg" alt="Circle">
-    <div class="zone zone--three">Lobe temporal</div>
-    <img class="circle circle--four" src="../../images/circle.svg" alt="Circle">
-    <div class="zone zone--four">Cervelet</div>
-
-
-    <div class="hemisphere hemisphere--droit">
-      <h3 class="hemisphere__title">Hémisphère Droit</h3>
-      <img class="hemisphere__picture" src="../../images/hemisphereDroit.png" alt="Hémisphère Droit">
+    <div class="explications">
+      <p>
+        le son n’est pas seulement traité par le
+        <span class="lightBlue">cortex auditif</span>,
+      </p>
+      <p>
+        situé dans
+        <span class="darkBlue">le lobe temporal</span>, mais par tout le cerveau.
+      </p>
     </div>
 
-    <img class="circle circle--five" src="../../images/circle.svg" alt="Circle">
-    <!--  Appartition au hover du cercle 5  -->
-    <div class="zone zone--five">Air de Broca</div>
-    <div class="hover__zone--none">
-      L’air de Broca analyse les mélodies.
+    <div class="explications--none">
+      <p>
+        Découvrez quelle partie de votre cerveau est
+        <span class="lightBlue">activée</span>,
+      </p>
+      <p>
+        par les différentes
+        <span class="darkBlue">composantes</span> de la musique.
+      </p>
     </div>
-
-    <img class="circle circle--six" src="../../images/circle.svg" alt="Circle">
-    <!--  Appartition au hover du cercle 6  -->
-    <div class="zone zone--six">Air de Wernicke</div>
-    <div class="hover__zone">
-      L’air de Wernicke analyse la comparaison des hauteurs des notes.
-    </div>
-
-    <img class="circle circle--seven" src="../../images/circle.svg" alt="Circle">
-    <!--  Appartition au hover du cercle 7  -->
-    <div class="zone zone--seven">Cortex auditif</div>
-    <div class="hover__zone--none">
-      Les mélodies et les structures musicales complexes sont analysées par le cortex auditif situé dans le lobe temporal.
-    </div>
-  </div>
-
-  <div class="explications">
-    <p>le son n’est pas seulement traité par le <span class="lightBlue">cortex auditif</span>,</p>
-    <p>situé dans <span class="darkBlue">le lobe temporal</span>, mais par tout le cerveau.</p>
-  </div>
-
-  <div class="explications--none">
-    <p>Découvrez quelle partie de votre cerveau est <span class="lightBlue">activée</span>,</p>
-    <p>par les différentes <span class="darkBlue">composantes</span> de la musique.</p>
-  </div>
-</div>
   <div id="filter" class="filter"></div>
 
-  <h1 id="title" class="title">{{chapterOnep.title}}</h1>
-
+  
+   </div>
   <nav id="nav" class="nav">
     <!--  Menu cerveau icône  -->
     <div class="menu">
@@ -185,7 +294,7 @@
           d="M24.0196 23.1268C23.0229 21.3686 21.1281 20.1523 18.913 20.1523C18.5529 20.1523 18.2609 20.4443 18.2609 20.8045C18.2609 21.1647 18.5529 21.4567 18.913 21.4567C20.6283 21.4567 22.1063 22.3965 22.8847 23.77C23.0626 24.0838 23.4608 24.1932 23.7737 24.0158C24.0871 23.8382 24.1971 23.4402 24.0196 23.1268Z"
           fill="white" />
       </svg>
-<router-link  class="menu__title item--title" to="/summary">
+
       <svg class="hovered" xmlns="http://www.w3.org/2000/svg" width="30" height="34" viewBox="0 0 30 34">
         <defs>
 
@@ -201,7 +310,7 @@
         </g>
       </svg>
 
-      <p>Menu</p></router-link>
+      <router-link  to="/summary" tag="p" class="menu__title item--title" >Menu</router-link>
     </div>
     <!--  Sous parties  -->
       <div class="item item__one">
@@ -255,8 +364,8 @@
     </div>
     <!--  Fin de la NavBar  -->
   </nav>
-    </div>
-    
+ 
+  </div>
 </template>
 <script>
 import axios from 'axios'
@@ -1443,6 +1552,245 @@ body {
 
 .lightBlue {
   color: #92FCFE;
+}
+
+
+.title__cerveau {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.subtitle__cerveau {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Gotham Book", sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 18px;
+  color: #92fcfe;
+  text-transform: uppercase;
+}
+
+.hemispheres {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 40vh;
+}
+
+.hemisphere {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hemisphere__title {
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.circle {
+  position: absolute;
+  width: 2%;
+  transition: all 0.5s;
+}
+
+.brain--stroke {
+  transition: all 0.5s;
+  transform-origin: center;
+  transform: scale(0.7);
+  animation: scale 1s infinite alternate-reverse;
+}
+
+.stroke--hovered {
+  transform-origin: center;
+  transform: scale(0.9);
+}
+
+.brain--hidden {
+  opacity: 0;
+  fill: url(#gradient);
+  transition: all 0.5s;
+}
+
+.brain--opacity {
+  opacity: 1;
+}
+
+.zone {
+  opacity: 0;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 10vw;
+  height: 4vh;
+  background-color: rgba(31, 31, 31);
+  border-radius: 10px;
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  color: #92fcfe;
+}
+
+.zone--visible {
+  opacity: 1;
+}
+
+.circle--one {
+  top: 30%;
+  left: 17%;
+}
+
+.zone--one {
+  top: 10%;
+  left: -2%;
+}
+
+.circle--two {
+  top: 55%;
+  left: 25%;
+}
+
+.zone--two {
+  top: 20%;
+  left: 38%;
+}
+
+.circle--three {
+  top: 40%;
+  left: 30%;
+}
+
+.zone--three {
+  top: 65%;
+  left: 40%;
+}
+
+.circle--four {
+  top: 75%;
+  left: 30%;
+}
+
+.zone--four {
+  top: 85%;
+  left: 35%;
+}
+
+.circle--five {
+  top: 45%;
+  right: 28%;
+}
+
+.zone--five {
+  top: 25%;
+  right: 40%;
+}
+
+.circle--six {
+  top: 43%;
+  right: 18%;
+}
+
+.zone--six {
+  top: 25%;
+  right: -2%;
+}
+
+.circle--seven {
+  top: 60%;
+  right: 25%;
+}
+
+.zone--seven {
+  top: 75%;
+  right: 2%;
+}
+
+.hover__zone {
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Gotham Book", sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  background: rgba(31, 31, 31, 0.5);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  width: 18vw;
+  padding: 10px;
+}
+
+.hover__zone--visible {
+  opacity: 1;
+}
+
+.explications {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1.4em;
+}
+
+.explications--none {
+  display: none;
+}
+
+.explications p {
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+@keyframes scale {
+  to {
+    transform: scale(0.9)
+  }
+}
+
+.rightarrow {
+  position: absolute;
+  top: 0;
+}
+
+.darkBlue {
+  color: #4b2abf;
+}
+
+.lightBlue {
+  color: #92fcfe;
 }
     
 

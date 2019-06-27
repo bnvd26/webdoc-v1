@@ -56,7 +56,13 @@ class ChapterOneRepository extends ServiceEntityRepository
                 'content' => (string) $chapterOne->getContent(),
                 'image'   => (string) $chapterOne->getImageBackground(),
                 'music'   => (string) $chapterOne->getMusic(),
-                'filename'=> (string) $chapterOne->getFilename()
+                'filename'=> (string) $chapterOne->getFilename(),
+                'content2'=> (string) $chapterOne->getContent2(),
+                'content3'=> (string) $chapterOne->getContent3(),
+                'content4'=> (string) $chapterOne->getContent4(),
+                'content5'=> (string) $chapterOne->getContent5(),
+                'content6'=> (string) $chapterOne->getContent6(),
+                'content7'=> (string) $chapterOne->getContent7(),
                 
         ];
     }

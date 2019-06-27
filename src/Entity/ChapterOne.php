@@ -69,6 +69,41 @@ class ChapterOne
      */
     private $updated;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content2;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content3;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content4;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content5;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content6;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $content7;
+
 
 
  
@@ -215,6 +250,90 @@ class ChapterOne
     public function setUpdated(\DateTimeInterface $updated): self
     {
         $this->updated = $updated;
+
+        return $this;
+    }
+
+    public function getContent1(): ?string
+    {
+        return $this->content1;
+    }
+
+    public function setContent1(?string $content1): self
+    {
+        $this->content1 = $content1;
+
+        return $this;
+    }
+
+    public function getContent2(): ?string
+    {
+        return $this->content2;
+    }
+
+    public function setContent2(?string $content2): self
+    {
+        $this->content2 = $content2;
+
+        return $this;
+    }
+
+    public function getContent3(): ?string
+    {
+        return $this->content3;
+    }
+
+    public function setContent3(?string $content3): self
+    {
+        $this->content3 = $content3;
+
+        return $this;
+    }
+
+    public function getContent4(): ?string
+    {
+        return $this->content4;
+    }
+
+    public function setContent4(?string $content4): self
+    {
+        $this->content4 = $content4;
+
+        return $this;
+    }
+
+    public function getContent5(): ?string
+    {
+        return $this->content5;
+    }
+
+    public function setContent5(?string $content5): self
+    {
+        $this->content5 = $content5;
+
+        return $this;
+    }
+
+    public function getContent6(): ?string
+    {
+        return $this->content6;
+    }
+
+    public function setContent6(?string $content6): self
+    {
+        $this->content6 = $content6;
+
+        return $this;
+    }
+
+    public function getContent7(): ?string
+    {
+        return $this->content7;
+    }
+
+    public function setContent7(?string $content7): self
+    {
+        $this->content7 = $content7;
 
         return $this;
     }
