@@ -1,7 +1,7 @@
 <template>
     <div id="app">
 
-    <p style="color:white;">{{chapterOnep.title}}</p>
+
 
   
 <img class="speaker" src="../../images/speaker.svg" alt="Coupe son">
@@ -12,7 +12,7 @@
   <img class="brain" src="../../images/cerveau.svg" alt="">
   <div id="filter" class="filter"></div>
 
-  <h1 id="title" class="title">L’influence de la musique sur le cerveau</h1>
+  <h1 id="title" class="title">{{chapterOnep.title}}</h1>
 
   <nav id="nav" class="nav">
     <!--  Menu cerveau icône  -->
@@ -156,8 +156,8 @@ export default {
           axios
         .get('http://127.0.0.1:8001/api/chapters')
         .then(response => (
-            this.chapterOnep = response.data[1][1],
-            this.parts = response.data[1][this.$route.params.id]
+            this.chapterOnep = response.data[2][0],
+            this.parts = response.data[2][this.$route.params.id]
         ))
      }
     
@@ -181,7 +181,7 @@ export default {
     async created () {
         axios
         .get('http://127.0.0.1:8001/api/chapters')
-        .then(response => (this.chapterOnep = response.data[1][this.$route.params.id]
+        .then(response => (this.chapterOnep = response.data[2][this.$route.params.id]
                            
                           
                            ))   
