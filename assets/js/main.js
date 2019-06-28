@@ -218,27 +218,35 @@ setTimeout(() => {
 }, 1000);
 
 var href = window.location.href
-var test = href.substring(href.length-12, href.length-1)
+var test = href.indexOf('chapterOne')
 console.log(test)
-var id = href[33];
+
+if(href[34]) {
+  var id = href[34]
+} else {
+  var id = href[33];
+}
+console.log(id)
 
 
-if(test === 'chapterOne/') {
+
+if(test) {
   document.addEventListener('wheel', function (event) {
 
-    if ((event.deltaY > 60) && !stopscroll) {
+    if ((event.deltaY > 100) && !stopscroll) {
       id++;
-      var url = href.substring(0, href-1) + id
-  
+      var url = href.substring(0, href.length-1) + id
+
+
       stopscroll = true;
       setTimeout(() => {
         window.location.replace(url)
       }, 500);
     }
   
-    else if ((event.deltaY < -60) && !stopscroll) {
+    else if ((event.deltaY < -100) && !stopscroll) {
       id--;
-      var url = href.substring(0, href-1) + id
+      var url = href.substring(0, href.length-1) + id
   
       stopscroll = true;
       setTimeout(() => {
@@ -252,7 +260,7 @@ if(test === 'chapterOne/') {
     let keycode = event.key
     if (keycode === 'ArrowDown' && !stopscroll) {
       id++;
-      var url = href.substring(0, href-1) + id
+      var url = href.substring(0, href.length-1) + id
   
       setTimeout(() => {
         window.location.replace(url)
@@ -261,7 +269,7 @@ if(test === 'chapterOne/') {
     }
     else if (keycode === 'ArrowUp' && !stopscroll) {
       id--;
-      var url = href.substring(0, href-1) + id
+      var url = href.substring(0, href.length-1) + id
   
       setTimeout(() => {
         window.location.replace(url)

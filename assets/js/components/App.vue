@@ -14,7 +14,12 @@
 
         <img id="infos" class="infos" src="../../images/infos.svg" alt="Informations Navigation" @click="activeModal()">
         <transition name="modal">
-             <div id="popup" class="infos__popup" v-if="modal" >
+             <div  class="infos__popup" v-if="modal" style="
+    position: absolute;
+    z-index: 200;
+    background: black;
+    border-radius: 30px;left:10%;
+" >
     <h2 class="popup__title">Indications :</h2>
     <div class="popup__content">
       <div class="popup__scroll">

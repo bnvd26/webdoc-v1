@@ -4,9 +4,9 @@
         <p class="id__question">{{level.id}}<span>/3</span></p>
         <p class="ok">{{level.question}}</p>
         <div class="response">
-            <router-link to="/questions/:id/result" tag="div" class="A">{{level.reponseA}}</router-link>
-            <div class="B">{{level.reponseB}}</div>
-            <div class="C">{{level.reponseC}}</div>
+            <router-link to="/questions/1/result" tag="div" class="A">{{level.reponseA}}</router-link>
+            <router-link to="/questions/2/result" tag="div" class="B">{{level.reponseB}}</router-link>
+            <router-link to="/questions/3/result" tag="div" class="C">{{level.reponseC}}</router-link>
         </div>        
         <router-link class="next" :to="level.link.toString()">Suivant</router-link>
         <router-link :to="level.linkSumm"  class="next">lknev</router-link>      

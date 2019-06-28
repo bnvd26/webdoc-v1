@@ -20,7 +20,7 @@
    <div style="margin-bottom: 80px;">
           {% for details in chapterOne %}
         <div style="display:flex;margin:auto;margin-top:50px;margin-bottom:50px;width:600px;justify-content:space-between;align-items:center;">
-        <img src="{{details.filename}}"/>
+    
           <p style="margin:0;">{{details.id}}</p>
           <p style="margin:0;">{{details.title}}</p>
           <a href={{ path('admin.edit.one', {id: details.id}) }} class="btn btn-primary">Editer</a>

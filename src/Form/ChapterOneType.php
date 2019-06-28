@@ -20,6 +20,21 @@ class ChapterOneType extends AbstractType
             ->add('music')
             ->add('content')
             ->add('filename')
+            ->add('content1')
+            ->add('content2')
+            ->add('content3')
+            ->add('content4')
+            ->add('content5')
+            ->add('content6')
+            ->add('content7')
+            ->add('content8')
+            ->add('content9')
+            ->add('content10')
+            ->add('content11')
+            ->add('content12')
+            ->add('content13')
+            ->add('content14')
+            
          
         ;
     }

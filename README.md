@@ -1,31 +1,32 @@
 # Webdoc-V1
 
-## need to do fixtures
 
-webdoc using symfony &amp; vueJS
 
-## if you have brew install composer
+## Composer
+###  macOS
 `brew install composer`
 
 ## Webpack
-`composer require symfony/webpack-encore-bundle`
-<br/>
+`composer require symfony\webpack-encore-bundle`
 `brew install yarn`
 
 ## Init your database
+
+
 `php bin/console doctrine:database:create`
 
+### Migration 
 `php bin/console make:migration`
 
+### Fixtures for database
+`php bin/console doctrine:fixtures:load`
 `php bin/console doctrine:schema:update --force`
 
 ## Run the project 
-
-`yarn install`
-<br/>
 `yarn encore dev --watch`
-<br/>
 `php bin/console server:run`
+
+You need to be here **[http://127.0.0.1:8001](http://127.0.0.1:8001/)**.
 
 
 
