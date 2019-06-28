@@ -7,7 +7,7 @@
 `brew install composer`
 
 ## Webpack
-`composer require symfony\webpack-encore-bundle`
+`composer require symfony/webpack-encore-bundle`
 `brew install yarn`
 
 ## Init your database
