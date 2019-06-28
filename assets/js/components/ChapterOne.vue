@@ -45,6 +45,7 @@
 
       <router-link  to="/summary" tag="p" class="menu__title item--title" >Menu</router-link>
     </div>
+   
     <!--  Sous parties  -->
       <div class="item item__one">
       <svg class="center" width="20" height="20" viewBox="0 0 20 20" fill="white" style="opacity: 1;"
@@ -81,7 +82,7 @@
       <svg class="nav--stroke" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="10" cy="10" r="9.5" stroke="white" />
       </svg>
-      <p class="three__title item--title">Les réactions physiologiques</p>
+      <router-link tag="p" class="three__title item--title" to="/chapterOne/12">Les réactions physiologiques</router-link>
     </div>
     <!--  Chapitre Suivant  -->
     <div class="next__chapter">
@@ -195,9 +196,15 @@
 
 
 </div>
+
 <div v-if="this.$route.params.id == 2">
-    <h1 id="title" class="title">{{chapterOnep.title}}</h1>
+  <transition name="modal">
+    <h1 id="title" class="title" v-if="modal">{{chapterOnep.title}}</h1>
+    </transition>
+<p class="scroll">Scroll down</p>
+    <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
 </div>
+
 
 
 
@@ -757,6 +764,10 @@
     <h1 id="title" class="title">{{chapterOnep.title}}</h1>
 </div>
  
+ <div v-if="this.$route.params.id == 7">
+   <p class="scroll">Scroll down</p>
+        <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
+ </div>
 
 <div v-if="this.$route.params.id == 8">
     <h1 id="title" class="title__cerveau">{{chapterOnep.title}}</h1>
@@ -827,7 +838,8 @@
 
 <div v-if="this.$route.params.id == 12" style="margin:100px;margin: 250px;height: 400px;display: flex;flex-direction: column;justify-content: space-between;line-height:30px;">
   
-    
+    <p class="scroll">Scroll down</p>
+        <img class="scroll__line" src="../../images/scrollLine.svg" alt="Scroll">
 
       <h1 id="title" style="font-family: 'Gotham', sans-serif;
   font-weight: 300;
@@ -985,7 +997,8 @@ export default {
             chapterOnep: ' ',
             parts: ' ',
             test: false,
-            sound: null
+            sound: null,
+            modal: true
         }
     },
     async created () {
@@ -1167,6 +1180,34 @@ a {
 
 .gif--file {
   width: 60%;
+}
+
+.modal-enter-active {
+    animation: fadeIn 1s
+}
+
+.modal-leave-active {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .clicked {

@@ -62,7 +62,7 @@ if(partThree)
 
 
 
-  var popup = document.getElementById('popup');
+
   var infos = document.getElementById('infos');
   var items = document.querySelectorAll('.item');
   var titles = document.querySelectorAll('.item--title');
@@ -125,25 +125,10 @@ if(partThree)
     })
   }
   
-  var opened = false;
-  infos.addEventListener('click', function () {
-    if (opened == false) {
-      popup.classList.add('clicked');
-      setTimeout(() => {
-        opened = true;
-      }, 100);
-    }
   
   
-  });
   
-  document.addEventListener('click', function () {
-    if (opened == true) {
-      popup.classList.remove('clicked');
-      opened = false
-    }
   
-  })
   
   
   // Intro
@@ -241,7 +226,7 @@ var id = href[33];
 if(test === 'chapterOne/') {
   document.addEventListener('wheel', function (event) {
 
-    if ((event.deltaY > 150) && !stopscroll) {
+    if ((event.deltaY > 60) && !stopscroll) {
       id++;
       var url = href.substring(0, href-1) + id
   
@@ -251,7 +236,7 @@ if(test === 'chapterOne/') {
       }, 500);
     }
   
-    else if ((event.deltaY < -150) && !stopscroll) {
+    else if ((event.deltaY < -60) && !stopscroll) {
       id--;
       var url = href.substring(0, href-1) + id
   
